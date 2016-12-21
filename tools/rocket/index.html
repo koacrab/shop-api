@@ -1,10 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>生成工具</title>
+    <style>
+        table tr td{border: 1px solid #ccc;}
+    </style>
 </head>
+
 <body>
+    <h1>生成工具</h1>
+
+    <!-- 步骤一 -->
+    <div class="step step1">
+        <h2>一、选择数据库</h2>
+        <div class="item">
+            <label for="" class="name">数据库类型：</label>
+            <select>
+                <option value="1">mongodb</option>
+                <option value="2">mysql</option>
+            </select>
+        </div>
+        <div class="item">
+            <label for="" class="name">主机名称：</label>
+            <input type="text" value="" placeholder="localhost">
+        </div>
+        <div class="item">
+            <label for="" class="name">用户名称：</label>
+            <input type="text" value="" placeholder="root">
+        </div>
+        <div class="item">
+            <label for="" class="name">用户密码：</label>
+            <input type="text" value="" placeholder="root">
+        </div>
+        <div class="item">
+            <label for="" class="name">数据库名：</label>
+            <input type="text" value="" placeholder="test">
+        </div>
+        <div class="item">
+            <label for="" class="name">端口：</label>
+            <input type="text" value="" placeholder="27017">
+        </div>
+    </div>
     
+    <!-- 步骤二 -->
+    <div class="step step2">
+        <h2>二、选择数据表</h2>
+        <table border="1" style="border-collapse:collapse;" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <td>表名</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>hzl_system</td>
+                    <td>系统库</td>
+                    <td>复制 | 删除 | 修改 | 锁定</td>
+                </tr>
+                <tr>
+                    <td>hzl_users</td>
+                    <td>非系统库</td>
+                    <td>复制 | 删除 | 修改 | 锁定</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- 步骤三 -->
+    <div class="step step3">
+        
+    </div>
 </body>
+
 </html>
