@@ -16,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "koa-bodyparser": "^4.2.0",
+    "koa-views": "^6.1.0",
     "lodash": "^4.17.4"
   }
 }

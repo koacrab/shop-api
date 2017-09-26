@@ -4,22 +4,27 @@ module.exports = {
     status: true,
   },
 
-  //body配置
+  //body
   body: {
     status: true,
   },
 
-  //body_parser配置
+  //控制器
+  controllers: {
+    status: true,
+  },
+
+  //body_parser
   body_parser: {
     status: true,
   },
 
-  //router配置
+  //router
   router: {
     status: true,
   },
 
-  //body配置
+  //body
   view: {
     status: true,
   },
@@ -29,17 +34,17 @@ module.exports = {
     status: false,
   },
 
-  //static配置
+  //static
   static: {
     status: false,
   },
 
-  //cors配置
+  //cors
   cors: {
     status: false,
   },
 
-  //session配置
+  //session
   session: {
     status: false,
   },
