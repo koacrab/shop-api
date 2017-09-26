@@ -1,4 +1,5 @@
 const Koa = require('koa');
+const config = require('../config/index.js');
 const convert = require('koa-convert');
 const Middles = require('./middleware/index');
 
@@ -9,22 +10,20 @@ class Application {
         this.appDir = appDir;
     }
 
-    run(){
-        let port = 3001;
-
+    init(){
         // register system middlewares
         Middles(this);
 
        /* // load application components
         component(this);*/
-    
+
         // TODO: sortMiddleware();
 
         for (let item of this.middlewares) {
             this.use(item(this));
         }
 
-        this.koa.listen(port);
+        this.koa.listen(config.port);
         console.log('app in running in port ' + port);
     }
 
