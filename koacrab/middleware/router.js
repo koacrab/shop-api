@@ -13,9 +13,10 @@ module.exports = function(root, opts) {
     }
 
     parm = ctx.request.query;
-    ctx.hzlMod = (parm.mod === '' || parm.mod === undefined) ? 'admin' : parm.mod;
-    ctx.hzlCtr = (parm.ctr === '' || parm.ctr === undefined) ? 'index' : parm.ctr;
-    ctx.hzlAct = (parm.act === '' || parm.act === undefined) ? 'index' : parm.act;
+    ctx.hzlMod = parm.mod ? parm.mod : 'admin';
+    ctx.hzlCtr = parm.ctr ? parm.ctr : 'index';
+    ctx.hzlAct = parm.act ? parm.act : 'index';
+
     ctx.hzlRouter = {
       mod: ctx.hzlMod,
       ctr: ctx.hzlCtr,
