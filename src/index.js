@@ -1,8 +1,6 @@
 'use strict';
 
-const path = require('path');
-const rootPath = path.dirname(__dirname);
-const server = require('../core/');
+const Koacrab = require('../koacrab/');
 
-const app = new server(__dirname);
+const app = new Koacrab();
 app.init();
