@@ -20,12 +20,14 @@ module.exports = function(root, opts) {
 
     ctx.hzlRouter = {
       ctr: ctx.hzlCtr,
-      act: ctx.hzlAct
+      act: ctx.hzlAct,
+      parm: parm
     };
 
-    if(!ctx.controller[ctx.hzlCtr]){
+    console.log(ctx.controller[ctx.hzlCtr]);
+    /*if(!ctx.controller[ctx.hzlCtr]){
       ctx.body = '请求的链接不存在，请检测！';
-    }
+    }*/
 
     try {
       let tmp = new ctx.controller[ctx.hzlCtr]();
@@ -37,7 +39,7 @@ module.exports = function(root, opts) {
 
     } catch (err) {
       console.log(err);
-      ctx.body = '请求的链接不存在，请检测！';
+      ctx.body = '出现异常！请检测！';
     }
 
     next();

@@ -10,9 +10,19 @@
     "type": "git",
     "url": "git@git.oschina.net:nodeJsWebSite/hzlsystem.git"
   },
-  "keywords": [],
+  "keywords": [
+    "koa2",
+    "web",
+    "crab",
+    "app",
+    "http",
+    "koacrab",
+    "framework",
+    "middleware",
+    "application"
+  ],
   "author": "haizlin",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "koa": "^2.3.0"
