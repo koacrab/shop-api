@@ -22,7 +22,6 @@ module.exports = function(root, opts) {
       ctr: ctx.hzlCtr,
       act: ctx.hzlAct
     };
-    ctx.hzlcurPath = '../../../src/app_' + ctx.hzlMod + '/controllers/' + ctx.hzlCtr;
 
     if(!ctx.controller[ctx.hzlCtr]){
       ctx.body = '请求的链接不存在，请检测！';
