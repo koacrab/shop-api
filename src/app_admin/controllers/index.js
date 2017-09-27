@@ -1,7 +1,7 @@
 'use strict'
 let Base = require('./base');
 
-class Index extends Base {
+module.exports = class Index extends Base {
     constructor() {
         super('子级传递过去的参数');
         this.name = 'test';
@@ -35,7 +35,6 @@ class Index extends Base {
         // console.log(this.renderJson('ssss'));
 
         this.renderJson('ssss');
-
     }
 
     async demo1() {
@@ -44,6 +43,4 @@ class Index extends Base {
         // return content;
     }
 };
-
-module.exports = Index;
 

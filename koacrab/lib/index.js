@@ -1,8 +1,8 @@
 const Koa = require('koa');
 const debug = require('debug')('koacrab');
-const config = require('../config/index.js');
 const convert = require('koa-convert');
 const lodash = require('lodash');
+const config = require('../config/index.js');
 const middleware = require('../middleware/index.js');
 
 module.exports = class Application {

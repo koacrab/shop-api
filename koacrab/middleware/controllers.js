@@ -1,41 +1,51 @@
 'use strict'
 /**
- * 路由中间件
+ * 控制器中间件
  */
 const fs = require('fs');
+const path = require('path');
+const _ = require('lodash');
 const config = require('../config/index.js');
 
-module.exports = function(root, opts) {
-  // 控制器缓存
-  let controllers = [];
-
+module.exports = function() {
   return function controllers(ctx, next) {
+    ctx.controller = loadController();
 
-    next();
+    return next();
   }
-}；
+};
 
 // 加载控制器
 function loadController() {
-  let filePath = '';
+  // 控制器缓存
+  let controllers = {};
+  let pathObj = walk(process.cwd() + '/' + config.controller || 'controllers');
+  let tempObj = {};
 
-  if (config.controller) {
-    for (let item in config.controller) {
-      filePath = `${item}.js`;
-
-      if (fs.existsSync(__dirname + '/' + filePath) && config[item] !== undefined && config[item]['status']) {
-        console.log('此次运行加载的中间件：' + item);
-        app.regMiddleware(require('./' + filePath));
-      }
-    }
-  } else {
-    fs.readdirSync(__dirname).forEach((item) => {
-      filePath = `${item}.js`;
-
-      if (fs.existsSync(__dirname + '/' + filePath) && config[item] !== undefined && config[item]['status']) {
-        console.log('此次运行加载的中间件：' + item);
-        app.regMiddleware(require(filePath));
-      }
-    });
+  for (let item of Object.keys(pathObj)) {
+    tempObj[item] = require(pathObj[item]);
+    _.assign(controllers, tempObj);
   }
+
+  return controllers;
+}
+
+function walk(dir) {
+  let children = {};
+
+  fs.readdirSync(dir).forEach(function(filename) {
+    let baseName = path.basename(filename, '.js');
+    let filePath = dir + "/" + filename;
+    let stat = fs.statSync(filePath);
+    let tempObj = {};
+
+    if (stat && stat.isDirectory()) {
+      children = children.concat(walk(filePath));
+    } else {
+      tempObj[baseName] = filePath;
+      _.assign(children, tempObj);
+    }
+  });
+
+  return children
 }
