@@ -13,8 +13,6 @@ module.exports = function(root, opts) {
 
     let parm = ctx.request.query;
 
-    console.log(ctx.controller);
-
     ctx.hzlCtr = parm.ctr || 'index';
     ctx.hzlAct = parm.act || 'index';
 
@@ -24,23 +22,18 @@ module.exports = function(root, opts) {
       parm: parm
     };
 
-    console.log(ctx.controller[ctx.hzlCtr]);
     /*if(!ctx.controller[ctx.hzlCtr]){
       ctx.body = '请求的链接不存在，请检测！';
     }*/
-
-    console.log(111);
 
     try {
       let tmp = new ctx.controller[ctx.hzlCtr]();
 
       ctx.hzlFun = tmp[ctx.hzlAct];
       let obj = Object.assign(tmp, ctx);
-      let content = ctx.hzlFun.call(obj);
-      console.log(content);
-      ctx.body = content;
+      ctx.hzlFun.call(obj);
     } catch (err) {
-      console.log(err);
+      console.log('error===',err);
       ctx.body = '出现异常！请检测！';
     }
 

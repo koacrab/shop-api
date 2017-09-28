@@ -2,15 +2,36 @@
 /**
  * 模板中间件
  */
-
+const nunjucks = require('nunjucks');
+const { resolve, join } = require('path');
 // let cons = require('grace-consolidate');
 // let engine = null;
 
-module.exports = function(root, opts) {
+module.exports = function() {
   return async function view(ctx, next) {
-    ctx.render = render;
     ctx.renderJson = renderJson;
     ctx.renderText = renderText;
+
+    let options = {
+      autoescape: true,
+      extension: '.html',
+    };
+
+    let env = nunjucks.configure(process.cwd() + '/theme', options);
+
+    ctx.render = (file, data = {}) => {
+      return new Promise((resolve, reject) => {
+        env.render(file, data, (error, result) => {
+          if (error) {
+            result = error.message;
+          }
+
+          ctx.type = 'text/html';
+          ctx.body = result;
+          resolve();
+        })
+      });
+    }
 
     await next();
   }
@@ -22,10 +43,10 @@ function renderJson(data) {
 }
 
 function renderText(data) {
-  return text;
+  return data;
 }
 
-function render(path, options) {
+function render(ctx, next, path, options) {
   // let engine = cons['handlebars'];
   /*return new Promise((resolve) => {
         engine(path, options, function(err, html) {

@@ -24,7 +24,7 @@ function loadController() {
 
   for (let item of Object.keys(pathObj)) {
     tempObj[item] = require(pathObj[item]);
-    _.assign(controllers, tempObj);
+    Object.assign(controllers, tempObj);
   }
 
   return controllers;
@@ -43,7 +43,7 @@ function walk(dir) {
       children = children.concat(walk(filePath));
     } else {
       tempObj[baseName] = filePath;
-      _.assign(children, tempObj);
+      Object.assign(children, tempObj);
     }
   });
 

@@ -6,7 +6,7 @@ module.exports = {
 
   //body
   body: {
-    status: true,
+    status: false,
   },
 
   //控制器
@@ -16,16 +16,16 @@ module.exports = {
 
   //body_parser
   body_parser: {
+    status: false,
+  },
+
+  //view
+  view: {
     status: true,
   },
 
   //router
   router: {
-    status: true,
-  },
-
-  //body
-  view: {
     status: true,
   },
 
