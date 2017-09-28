@@ -19,13 +19,19 @@ module.exports = class Application {
       this.use(item(this));
     }
 
-    this.koa.listen(config.port);
+    this.run(config.port);
+
     console.log('app in running in port ' + config.port);
   }
 
   // 使用koa的中间件
   use(middleware) {
     this.koa.use(middleware);
+  }
+
+  // 运行
+  run(port){
+    this.koa.listen(port);
   }
 
   // 注册中间件

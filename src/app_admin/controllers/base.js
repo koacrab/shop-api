@@ -6,7 +6,7 @@ class Base {
     }
 
     _index(name) {
-        console.log('父级。。。');
+        console.log('父级1。。。');
         return '这是首页！' + this.name;
     }
 };

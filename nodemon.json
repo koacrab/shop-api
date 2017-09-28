@@ -1,13 +1,14 @@
 {
   "verbose": true,
   "watch": [
-    "koacrab/**/*",
+    "koacrab/*",
+    "koacrab/lib/*",
+    "koacrab/middleware/*",
     "src/*"
   ],
   "ignore": [
     ".git",
-    "node_modules/**/node_modules",
-    "koacrab/**/node_modules/*"
+    "node_modules/*"
   ],
   "execMap": {
     "": "node",
