@@ -1,4 +1,6 @@
 const Koa = require('koa');
+const path = require('path');
+const fs = require('fs');
 const debug = require('debug')('koacrab');
 const convert = require('koa-convert');
 const lodash = require('lodash');
@@ -11,6 +13,8 @@ module.exports = class Application {
     this.middlewares = [];
     this.koa = new Koa();
     this.crab = {};
+    this.path = process.cwd();
+    console.log('test===',this.path);
   }
 
   init() {
@@ -22,6 +26,7 @@ module.exports = class Application {
     }
 
     this.run(config.port);
+    this.utils(this.path);
   }
 
   // 使用koa的中间件
@@ -30,15 +35,23 @@ module.exports = class Application {
   }
 
   // 运行
-  run(port){
+  run(port) {
     this.koa.listen(port);
 
     console.log('app in running in port ' + config.port);
   }
 
   // 公共方法，在utils.js中
-  utils(){
-    this.crab.utils = utils || {};
+  utils(dir) {
+    // this.crab.utils = utils || {};
+    let children = {};
+    let dirs = dir + '/libs/';
+    fs.readdirSync(dirs).forEach(function(filename) {
+      let baseName = path.basename(filename, '.js');
+      let filePath = dirs + "/" + filename;
+
+      require(filePath);
+    });
   }
 
   // 注册中间件
