@@ -11,10 +11,10 @@ module.exports = class Index extends Base {
     return 'index...';
   }
 
-  say(name) {
+  async say(name) {
     console.log('say...');
-    let data = {test:11111};
-    this.render('home/view/index', data);
+    let data = {test:'test.......'};
+    await this.render('home/view/index.html', data);
   }
 
   demo() {
