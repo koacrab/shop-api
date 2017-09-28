@@ -1,5 +1,5 @@
-'use strict'
 let Base = require('./base');
+let News = require('../models/index.js');
 
 module.exports = class Index extends Base {
   constructor() {
@@ -13,6 +13,11 @@ module.exports = class Index extends Base {
 
   async say(name) {
     console.log('say...');
+    let news = new News();
+    console.log(news.getUserInfo(333));
+
+    console.log(this);
+
     let data = {test:'test.......'};
     await this.render('home/view/index.html', data);
   }
