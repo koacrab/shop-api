@@ -1,14 +1,13 @@
 'use strict'
 
 class Base {
-    constructor(name) {
-        this.fname = name;
-    }
+  constructor(name) {
+    this.fname = name;
+  }
 
-    _index(name) {
-        console.log('父级1。。。');
-        return '这是首页！' + this.name;
-    }
+  _index(name) {
+    return '这是父级的_index方法！' + this.name;
+  }
 };
 
 module.exports = Base;
