@@ -46,5 +46,5 @@ function walk(dir) {
     }
   });
 
-  return children
+  return children;
 }

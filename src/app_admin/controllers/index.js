@@ -1,6 +1,6 @@
 let Base = require('./base');
 let News = require('../models/index.js');
-let request = require('request');
+// let request = require('request');
 
 module.exports = class Index extends Base {
   constructor() {
@@ -23,15 +23,17 @@ module.exports = class Index extends Base {
   async say(name) {
     this.common.utils.test('bbbb');
     this.common.page.getSize(123);
+    // 打印配置文件
+    // console.log(this.conf.username);
     console.log('say...');
     let news = new News();
     console.log(news.getUserInfo(333));
 
-    request('https://api.github.com/repos/vmg/redcarpet/issues?state=closed', function (error, response, body) {
+    /*request('https://api.github.com/repos/vmg/redcarpet/issues?state=closed', function (error, response, body) {
       console.log('error:', error);
       console.log('statusCode:', response && response.statusCode);
       console.log('body:', body);
-    });
+    });*/
 
     // console.log(this);
 

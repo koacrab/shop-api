@@ -15,7 +15,8 @@ module.exports = class Application {
     this.crab = {};
     // 项目运行的根路径
     this.root = process.cwd();
-    console.log('test===',this.root);
+    this.conf = {};
+    console.log('test===', this.root);
   }
 
   init() {
@@ -27,7 +28,7 @@ module.exports = class Application {
     }
 
     this.run(config.port);
-    // this.utils(this.root);
+    this.conf = this.loadConf(this.root);
   }
 
   // 使用koa的中间件
@@ -36,8 +37,8 @@ module.exports = class Application {
   }
 
   // 运行
-  run(port) {
-    this.koa.listen(port);
+  run(port,...args) {
+    this.koa.listen(port,...args);
 
     console.log('app in running in port ' + config.port);
   }
@@ -48,12 +49,36 @@ module.exports = class Application {
   }
 
   // 读取配置
-  getConf(dir, name) {
-
+  getConf(file, name) {
+    return this.conf[file][name];
   }
 
   // 设置配置
-  setConf(dir, name, value) {
+  setConf(file, name, value) {
 
+  }
+
+  // 加载配置文件
+  loadConf(dir) {
+    let children = {};
+    let dirs = dir + '/config/'
+
+    fs.readdirSync(dirs).forEach(function(filename) {
+      let baseName = path.basename(filename, '.config.js');
+      let filePath = dirs + "/" + filename;
+      let stat = fs.statSync(filePath);
+      let tempObj = {};
+
+      if (stat && stat.isDirectory()) {
+        children = children.concat(walk(filePath));
+      } else {
+        tempObj[baseName] = require(filePath);
+        Object.assign(children, tempObj);
+      }
+    });
+
+    console.log(children);
+
+    return children;
   }
 };
