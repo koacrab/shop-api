@@ -1,6 +1,5 @@
 let Base = require('./base');
 let News = require('../models/index.js');
-const utils = require('../libs/utils.js');
 
 module.exports = class Index extends Base {
   constructor() {
@@ -9,11 +8,12 @@ module.exports = class Index extends Base {
   }
 
   index() {
-    return 'index...';
+    console.log('index...');
   }
 
   async say(name) {
-    utils.test('bbbb');
+    this.common.utils.test('bbbb');
+    this.common.page.getSize(123);
     console.log('say...');
     let news = new News();
     console.log(news.getUserInfo(333));

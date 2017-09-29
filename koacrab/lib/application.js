@@ -13,8 +13,9 @@ module.exports = class Application {
     this.middlewares = [];
     this.koa = new Koa();
     this.crab = {};
-    this.path = process.cwd();
-    console.log('test===',this.path);
+    // 项目运行的根路径
+    this.root = process.cwd();
+    console.log('test===',this.root);
   }
 
   init() {
@@ -26,7 +27,7 @@ module.exports = class Application {
     }
 
     this.run(config.port);
-    this.utils(this.path);
+    // this.utils(this.root);
   }
 
   // 使用koa的中间件
@@ -39,19 +40,6 @@ module.exports = class Application {
     this.koa.listen(port);
 
     console.log('app in running in port ' + config.port);
-  }
-
-  // 公共方法，在utils.js中
-  utils(dir) {
-    // this.crab.utils = utils || {};
-    let children = {};
-    let dirs = dir + '/libs/';
-    fs.readdirSync(dirs).forEach(function(filename) {
-      let baseName = path.basename(filename, '.js');
-      let filePath = dirs + "/" + filename;
-
-      require(filePath);
-    });
   }
 
   // 注册中间件

@@ -1,14 +1,14 @@
 'use strict'
 /**
- * 控制器中间件
+ * 工具中间件
  */
 const fs = require('fs');
 const path = require('path');
 const config = require('../config/index.js');
 
 module.exports = function() {
-  return function controllers(ctx, next) {
-    ctx.controller = loadController();
+  return function utils(ctx, next) {
+    ctx.common = loadController();
 
     return next();
   }
@@ -17,16 +17,16 @@ module.exports = function() {
 // 加载控制器
 function loadController() {
   // 控制器缓存
-  let controllers = {};
-  let pathObj = walk(process.cwd() + '/' + config.controller || 'controllers');
+  let utils = {};
+  let pathObj = walk(process.cwd() + '/libs/');
   let tempObj = {};
 
   for (let item of Object.keys(pathObj)) {
     tempObj[item] = require(pathObj[item]);
-    Object.assign(controllers, tempObj);
+    Object.assign(utils, tempObj);
   }
 
-  return controllers;
+  return utils;
 }
 
 function walk(dir) {

@@ -10,6 +10,11 @@ module.exports = {
   },
 
   //控制器
+  utils: {
+    status: true,
+  },
+
+  //控制器
   controllers: {
     status: true,
   },

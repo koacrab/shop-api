@@ -1,7 +1,7 @@
 'use strict';
 console.log('page.js....');
 module.exports = {
-  test: function(name){
-    console.log('工具库',name);
+  getSize: function(num){
+    console.log('获取到的分页数:',num);
   }
 };
