@@ -1,6 +1,6 @@
-let Base = require('./base');
-let News = require('../models/index.js');
-// let request = require('request');
+let Base = require('../base.js');
+let News = require('../../models/index.js');
+let request = require('request');
 
 module.exports = class Index extends Base {
   constructor() {
@@ -8,12 +8,12 @@ module.exports = class Index extends Base {
     this.name = 'test1111';
   }
 
-  __after(){
-    console.log('后置操作……');
+  _before_index(){
+    console.log('前置操作……');
   }
 
-  __before_index(){
-
+  __after_index(){
+    console.log('后置操作……');
   }
 
   index() {
@@ -29,11 +29,11 @@ module.exports = class Index extends Base {
     let news = new News();
     console.log(news.getUserInfo(333));
 
-    /*request('https://api.github.com/repos/vmg/redcarpet/issues?state=closed', function (error, response, body) {
+    request('https://api.github.com/repos/vmg/redcarpet/issues?state=closed', function (error, response, body) {
       console.log('error:', error);
       console.log('statusCode:', response && response.statusCode);
       console.log('body:', body);
-    });*/
+    });
 
     // console.log(this);
 

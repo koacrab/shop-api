@@ -18,10 +18,11 @@ module.exports = function() {
 function loadController() {
   // 控制器缓存
   let controllers = {};
-  let pathObj = walk(process.cwd() + '/' + config.controller || 'controllers');
+  let pathObj = readDirSync(process.cwd() + '/' + config.controller || 'controllers');
   let tempObj = {};
 
   for (let item of Object.keys(pathObj)) {
+    // tempObj[item] = new (require(pathObj[item]));
     tempObj[item] = require(pathObj[item]);
     Object.assign(controllers, tempObj);
   }
@@ -29,18 +30,24 @@ function loadController() {
   return controllers;
 }
 
-function walk(dir) {
-  let children = {};
-
+// 读取控制器目录
+let children = {};
+function readDirSync(dir, type) {
   fs.readdirSync(dir).forEach(function(filename) {
-    let baseName = path.basename(filename, '.js');
     let filePath = dir + "/" + filename;
     let stat = fs.statSync(filePath);
     let tempObj = {};
 
     if (stat && stat.isDirectory()) {
-      children = children.concat(walk(filePath));
+      readDirSync(filePath, filename);
     } else {
+      let baseName ='';
+      if(type){
+        baseName = type + '/' + path.basename(filename, '.js');
+      }else{
+        baseName = path.basename(filename, '.js');
+      }
+
       tempObj[baseName] = filePath;
       Object.assign(children, tempObj);
     }

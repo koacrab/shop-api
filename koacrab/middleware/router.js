@@ -4,29 +4,35 @@
  */
 module.exports = function() {
   return async function router(ctx, next) {
+    console.log('进来路由器了……。');
     if (ctx.url === '/favicon.ico') {
       return false;
     }
 
     let parm = ctx.request.query;
 
+    ctx.crabMod = parm.mod || 'index';
     ctx.crabCtr = parm.ctr || 'index';
     ctx.crabAct = parm.act || 'index';
 
     ctx.crabRouter = {
+      ctr: ctx.crabMod,
       ctr: ctx.crabCtr,
       act: ctx.crabAct,
       parm: parm
     };
 
+    let modAndCtr = ctx.crabMod + '/' + ctx.crabCtr;
+    // console.log(modAndCtr);
+
     let ctrs = Object.keys(ctx.controller);
-    if(ctrs.indexOf(ctx.crabCtr) === -1){
-      console.error('控制器' + ctx.crabCtr + '不存在，请检查');
+    if(ctrs.indexOf(modAndCtr) === -1){
+      console.error('模块或者控制器' + modAndCtr + '不存在，请检查');
       ctx.body = '请求的链接不存在，请检测！';
       return;
     }
 
-    let ctrsFn = Object.getOwnPropertyNames(ctx.controller[ctx.crabCtr].prototype);
+    let ctrsFn = Object.getOwnPropertyNames(ctx.controller[modAndCtr].prototype);
     if(ctrsFn.indexOf(ctx.crabAct) === -1){
       console.error('方法' + ctx.crabAct + '不存在，请检查');
       ctx.body = '请求的链接不存在，请检测！！！';
@@ -34,7 +40,7 @@ module.exports = function() {
     }
 
     try {
-      let tmp = new ctx.controller[ctx.crabCtr]();
+      let tmp = new ctx.controller[modAndCtr]();
 
       ctx.crabFn = tmp[ctx.crabAct];
       let obj = Object.assign(tmp, ctx);
