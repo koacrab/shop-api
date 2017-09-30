@@ -1,3 +1,43 @@
+=============
+功能：
+支持es6/es7
+支持async/await
+数据库orm(mysql,mongo)
+sesion,redis
+支持websocket
+命令行调用
+自动更新
+hook钩子
+中间件
+多项目
+多路由模式
+日志（请求、错误、性能）
+pm2
+国际化
+多主题
+自定义错误页面
+单元测试
+覆盖率
+rest api
+部署
+docker
+安全
+定时任务
+插件
+typescript
+子域名
+模板
+vue/angular/react/avalon
+代理proxy
+
+=============
+辅助工具
+命令行
+生成控制器
+生成模板
+初始化项目
+=============
+
 模板渲染
 model加载
 配置文件
@@ -5,7 +45,7 @@ model加载
 unit , 把工具库放到common里面，在任何地方都可以使用
 cookie和session
 路由的各种形式restful，参数
-前置，后置，空操作
+前置，后置，空操作 完成
 调试,异常处理
 日志
 模板开发

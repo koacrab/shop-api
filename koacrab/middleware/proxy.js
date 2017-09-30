@@ -5,10 +5,10 @@
 
 let request = require('request');
 
-module.exports = function() {
+module.exports = function(url) {
   return async function proxy(ctx, next) {
-
-    request('http://www.baidu.com', function(error, response, body) {
+    url = 'http://www.baidu.com';
+    request(url, function(error, response, body) {
       // console.log('error:', error);
       // console.log('statusCode:', response && response.statusCode);
       // console.log('body:', body);
