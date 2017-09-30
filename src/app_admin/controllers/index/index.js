@@ -1,6 +1,5 @@
 let Base = require('../base.js');
-let News = require('../../models/index.js');
-let request = require('request');
+let news = new (require('../../models/index.js'));
 
 module.exports = class Index extends Base {
   constructor() {
@@ -8,11 +7,12 @@ module.exports = class Index extends Base {
     this.name = 'test1111';
   }
 
-  _before_index(){
+  _before_say(){
+    this.common.utils.test('aaaaaa');
     console.log('前置操作……');
   }
 
-  __after_index(){
+  _after_say(){
     console.log('后置操作……');
   }
 
@@ -25,17 +25,10 @@ module.exports = class Index extends Base {
     this.common.page.getSize(123);
     // 打印配置文件
     // console.log(this.conf.username);
-    console.log('say...');
-    let news = new News();
+    console.log('say11111...');
     console.log(news.getUserInfo(333));
 
-    request('https://api.github.com/repos/vmg/redcarpet/issues?state=closed', function (error, response, body) {
-      console.log('error:', error);
-      console.log('statusCode:', response && response.statusCode);
-      console.log('body:', body);
-    });
-
-    // console.log(this);
+    // https://api.github.com/repositories/50917994
 
     let data = {test:'test.......'};
     await this.render('home/view/index.html', data);

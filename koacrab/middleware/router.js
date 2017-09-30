@@ -42,9 +42,21 @@ module.exports = function() {
     try {
       let tmp = new ctx.controller[modAndCtr]();
 
-      ctx.crabFn = tmp[ctx.crabAct];
       let obj = Object.assign(tmp, ctx);
+
+      // 前置
+      if(ctrsFn.indexOf('_before_' + ctx.crabAct) !== -1){
+        tmp['_before_' + ctx.crabAct].call(obj);
+      }
+
+      // 正常操作
+      ctx.crabFn = tmp[ctx.crabAct];
       ctx.crabFn.call(obj);
+
+      // 后置
+      if(ctrsFn.indexOf('_after_' + ctx.crabAct) !== -1){
+        tmp['_after_' + ctx.crabAct].call(obj);
+      }
     } catch (err) {
       console.error(err);
       ctx.body = '出现异常！请检测！';

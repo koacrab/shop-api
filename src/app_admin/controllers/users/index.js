@@ -24,12 +24,13 @@ module.exports = class Index extends Base {
     this.common.utils.test('bbbb');
     this.common.page.getSize(123);
     // 打印配置文件
-    // console.log(this.conf.username);
+    console.log(this.conf.username);
     console.log('say...');
     let news = new News();
     console.log(news.getUserInfo(333));
 
-    request('https://api.github.com/repos/vmg/redcarpet/issues?state=closed', function (error, response, body) {
+    // https://api.github.com/repositories/50917994
+    request('https://api.github.com/repositories/50917994', function (error, response, body) {
       console.log('error:', error);
       console.log('statusCode:', response && response.statusCode);
       console.log('body:', body);

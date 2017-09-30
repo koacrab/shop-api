@@ -14,6 +14,11 @@ module.exports = {
     status: true,
   },
 
+  //代理
+  proxy: {
+    status: true,
+  },
+
   //控制器
   controllers: {
     status: true,
