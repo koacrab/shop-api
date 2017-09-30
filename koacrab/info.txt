@@ -24,11 +24,17 @@ docker
 安全
 定时任务
 插件
+扩展
 typescript
 子域名
 模板
 vue/angular/react/avalon
 代理proxy
+rpc
+认证
+关闭控制器（暂时）
+集群
+微服务
 
 =============
 辅助工具
@@ -36,6 +42,18 @@ vue/angular/react/avalon
 生成控制器
 生成模板
 初始化项目
+
+=============
+类
+分页
+excel
+pdf
+二维码
+验证码
+短信
+邮箱
+上传文件
+
 =============
 
 模板渲染

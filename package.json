@@ -19,6 +19,7 @@
     "koa-bodyparser": "^4.2.0",
     "koa-views": "^6.1.0",
     "lodash": "^4.17.4",
+    "mysql": "^2.14.1",
     "nunjucks": "^3.0.1",
     "request": "^2.83.0"
   }

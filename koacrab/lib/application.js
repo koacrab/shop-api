@@ -6,6 +6,7 @@ const convert = require('koa-convert');
 const lodash = require('lodash');
 const config = require('../config/index.js');
 const utils = require('./utils.js');
+const log = require('./log.js');
 const middleware = require('../middleware/index.js');
 
 module.exports = class Application {
@@ -37,8 +38,8 @@ module.exports = class Application {
   }
 
   // 运行
-  run(port,...args) {
-    this.koa.listen(port,...args);
+  run(...args) {
+    this.koa.listen(...args);
 
     console.log('app in running in port ' + config.port);
   }
