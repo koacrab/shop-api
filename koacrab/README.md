@@ -1,6 +1,8 @@
 # KoaCrab
-> 前身是Hzl.php（未开源）, 后基于express重构后，随着koa2的出现，使用到了async/await，不再需要经过Babel,就能很好的解决了回调的问题，所以使用Koa2进行改版升级，并于老婆的生日那天（1月10日）开源。
+> 前身是hzl.php（未开源）, 后基于express重构后，随着koa2的出现，使用到了async/await，不再需要经过Babel,就能很好的解决了回调的问题，所以使用Koa2进行改版升级，并于老婆的生日那天（1月10日）开源。
+
 > 含义：因为是基于koa的，所以也蹭下koa的热度，再者主要是Crab，对，没错，就是螃蟹！
+
 > 简单易上手！
 
 ## 核心功能
@@ -51,4 +53,5 @@
 * KoaCrab-Monitor 前端监控管理系统
 
 ## 参考
-
+* [egg](https://github.com/eggjs/egg)
+* [thinkjs]()
