@@ -23,7 +23,9 @@
   ],
   "author": "haizlin",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "nunjucks": "^3.0.1"
+  },
   "devDependencies": {
     "koa": "^2.3.0",
     "mysql": "^2.14.1",

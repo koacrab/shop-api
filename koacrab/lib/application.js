@@ -9,6 +9,8 @@ const utils = require('./utils.js');
 const log = require('./log.js');
 const middleware = require('../middleware/index.js');
 
+const statics = require('koa-static');
+
 module.exports = class Application {
   constructor() {
     this.middlewares = [];
@@ -17,7 +19,6 @@ module.exports = class Application {
     // 项目运行的根路径
     this.root = process.cwd();
     this.conf = {};
-    console.log('test===', this.root);
   }
 
   init() {
@@ -27,6 +28,9 @@ module.exports = class Application {
     for (let item of this.middlewares) {
       this.use(item(this));
     }
+
+    console.log(statics(this.root + '/theme/home/'));
+    this.use(statics(this.root + '/theme/home/'));
 
     this.run(config.port);
     this.conf = this.loadConf(this.root);

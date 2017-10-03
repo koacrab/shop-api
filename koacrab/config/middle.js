@@ -1,71 +1,75 @@
 module.exports = {
   //favicon设置
-  favicon: {
+  'favicon': {
     status: true,
   },
 
   //body
-  body: {
+  'body': {
     status: false,
   },
 
   //控制器
-  utils: {
+  'utils': {
     status: true,
+  },
+
+  //static
+  'static': {
+    status: true,
+    options:{
+      dir: 'theme/home/',
+      dynamic: true,
+    }
   },
 
   //代理
-  proxy: {
-    status: true,
+  'proxy': {
+    status: false,
   },
 
   //控制器
-  controllers: {
+  'controllers': {
     status: true,
   },
 
   //body_parser
-  body_parser: {
+  'body_parser': {
     status: false,
   },
 
   //view
-  view: {
+  'view': {
     status: true,
   },
 
   //router
-  router: {
+  'router': {
     status: true,
   },
 
   //日志
-  logger: {
-    status: false,
-  },
-
-  //static
-  static: {
+  'logger': {
     status: false,
   },
 
   //cors
-  cors: {
+  'cors': {
     status: false,
   },
 
   //session
-  session: {
+  'session': {
     status: false,
   },
 
   //skip middleware
-  skip: {
+  'skip': {
     status: false,
   },
 
   //http middleware
-  http: {
+  'http': {
     status: false,
   }
 };
