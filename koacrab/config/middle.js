@@ -16,7 +16,7 @@ module.exports = {
 
   //static
   'static': {
-    status: true,
+    status: false,
     options:{
       dir: 'theme/home/',
       dynamic: true,

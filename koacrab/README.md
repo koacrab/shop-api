@@ -49,8 +49,11 @@
 * KoaCrab-Admin 后台管理生成
 * KoaCrab-Pm2 pm2管理系统
 * KoaCrab-Doc 文档管理系统
-* KoaCrab-Doc 文档管理系统
+* KoaCrab-Tools 工具
 * KoaCrab-Monitor 前端监控管理系统
+* KoaCrab- 数据上报
+* KoaCrab- 错误监控
+
 
 ## 参考
 * [egg](https://github.com/eggjs/egg)

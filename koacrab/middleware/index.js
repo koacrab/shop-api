@@ -10,7 +10,7 @@ module.exports = function(app) {
     for (let item in config) {
       filePath = `${item}.js`;
 
-      if (fs.existsSync(__dirname + '/' + filePath) && config[item] !== undefined && config[item]['status']) {
+      if (fs.existsSync(__dirname + '/' + filePath) && config[item] && config[item]['status']) {
         console.log('此次运行加载的中间件：' + item);
         app.regMiddleware(require('./' + filePath));
       }
@@ -19,7 +19,7 @@ module.exports = function(app) {
     fs.readdirSync(__dirname).forEach((item) => {
       filePath = `${item}.js`;
 
-      if (fs.existsSync(__dirname + '/' + filePath) && config[item] !== undefined && config[item]['status']) {
+      if (fs.existsSync(__dirname + '/' + filePath) && config[item] && config[item]['status']) {
         console.log('此次运行加载的中间件：' + item);
         app.regMiddleware(require(filePath));
       }

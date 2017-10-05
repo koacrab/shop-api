@@ -21,6 +21,7 @@ module.exports = class Index extends Base {
   }
 
   async say(name) {
+    console.log('test=====',koacrab.version);
     this.common.utils.test('bbbb');
     this.common.page.getSize(123);
     // 打印配置文件
