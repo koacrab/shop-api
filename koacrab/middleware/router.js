@@ -11,19 +11,22 @@ module.exports = function() {
 
     let parm = ctx.request.query;
 
-    ctx.crabMod = parm.mod || 'index';
-    ctx.crabCtr = parm.ctr || 'index';
-    ctx.crabAct = parm.act || 'index';
+    let mod = parm.mod || 'index';
+    let ctr = parm.ctr || 'index';
+    let act = parm.act || 'index';
 
-    ctx.crabRouter = {
-      ctr: ctx.crabMod,
-      ctr: ctx.crabCtr,
-      act: ctx.crabAct,
+    delete(parm['mod']);
+    delete(parm['ctr']);
+    delete(parm['act']);
+
+    ctx.router = {
+      mod: mod,
+      ctr: ctr,
+      act: act,
       parm: parm
     };
 
-    let modAndCtr = ctx.crabMod + '/' + ctx.crabCtr;
-    // console.log(modAndCtr);
+    let modAndCtr = mod + '/' + ctr;
 
     let ctrs = Object.keys(ctx.controller);
     if(ctrs.indexOf(modAndCtr) === -1){
@@ -33,29 +36,31 @@ module.exports = function() {
     }
 
     let ctrsFn = Object.getOwnPropertyNames(ctx.controller[modAndCtr].prototype);
-    if(ctrsFn.indexOf(ctx.crabAct) === -1){
-      console.error('方法' + ctx.crabAct + '不存在，请检查');
+    if(ctrsFn.indexOf(act) === -1){
+      console.error('方法' + act + '不存在，请检查');
       ctx.body = '请求的链接不存在，请检测！！！';
       return;
     }
 
     try {
-      let tmp = new ctx.controller[modAndCtr]();
+      // 实例化控制器
+      let tmp = {};
+      tmp['currController'] = new ctx.controller[modAndCtr]();
 
       let obj = Object.assign(tmp, ctx);
 
       // 前置
-      if(ctrsFn.indexOf('_before_' + ctx.crabAct) !== -1){
-        tmp['_before_' + ctx.crabAct].call(obj);
+      if(ctrsFn.indexOf('_before_' + act) !== -1){
+        tmp['currController']['_before_' + act].call(obj);
       }
 
       // 正常操作
-      ctx.crabFn = tmp[ctx.crabAct];
+      ctx.crabFn = tmp['currController'][act];
       ctx.crabFn.call(obj);
 
       // 后置
-      if(ctrsFn.indexOf('_after_' + ctx.crabAct) !== -1){
-        tmp['_after_' + ctx.crabAct].call(obj);
+      if(ctrsFn.indexOf('_after_' + act) !== -1){
+        tmp['currController']['_after_' + act].call(obj);
       }
     } catch (err) {
       console.error(err);

@@ -8,20 +8,25 @@ const config = require('../config/index.js');
 
 module.exports = function() {
   return function utils(ctx, next) {
-    ctx.common = loadController();
+    ctx = Object.assign(ctx, loadUtils(ctx));
 
     return next();
   }
 };
 
 // 加载控制器
-function loadController() {
+function loadUtils(ctx) {
   // 控制器缓存
   let utils = {};
   let pathObj = walk(process.cwd() + '/libs/');
   let tempObj = {};
 
   for (let item of Object.keys(pathObj)) {
+    if(ctx.hasOwnProperty(item)){
+      console.warn(`提示：文件名'${item}'已经被使用，请重新更改文件名，文件的路径：`, pathObj[item]);
+      continue;
+    }
+
     tempObj[item] = require(pathObj[item]);
     Object.assign(utils, tempObj);
   }

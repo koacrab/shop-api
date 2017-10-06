@@ -5,7 +5,6 @@ const debug = require('debug')('koacrab');
 const convert = require('koa-convert');
 const lodash = require('lodash');
 const config = require('../config/index.js');
-const utils = require('./utils.js');
 const pkg = require('../../package.json');
 const log = require('./log.js');
 const middleware = require('../middleware/index.js');
@@ -15,7 +14,6 @@ const statics = require('koa-static');
 module.exports = class Application {
   constructor() {
     global.koacrab = pkg;
-    koacrab.test11 = 1111;
 
     this.middlewares = [];
     this.koa = koacrab.koa = new Koa();

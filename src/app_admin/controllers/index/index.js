@@ -3,12 +3,12 @@ let news = new (require('../../models/index.js'));
 
 module.exports = class Index extends Base {
   constructor() {
-    super('子级传递过去的参数');
+    super('子级传递过去的参数!!!!');
     this.name = 'test1111';
   }
 
   _before_say(){
-    this.common.utils.test('aaaaaa');
+    this.utils.test('aaaaaa');
     console.log('前置操作……');
   }
 
@@ -17,13 +17,14 @@ module.exports = class Index extends Base {
   }
 
   index() {
-    console.log('index...');
+    let data = {'test': 'test....'};
+    this.render('index/view/index.html', data);
   }
 
-  async say(name) {
+  async list(name) {
     console.log('test=====',koacrab.version);
-    this.common.utils.test('bbbb');
-    this.common.page.getSize(123);
+    this.utils.test('bbbb');
+    this.page.getSize(123);
     // 打印配置文件
     // console.log(this.conf.username);
     console.log('say11111...');
@@ -32,10 +33,10 @@ module.exports = class Index extends Base {
     // https://api.github.com/repositories/50917994
 
     let data = {test:'test.......'};
-    await this.render('home/view/index.html', data);
+    await this.render('index/view/index.html', data);
   }
 
-  demo() {
+  show() {
     let ctr = this.hzlCtr;
     let act = this.hzlAct;
 
@@ -57,17 +58,8 @@ module.exports = class Index extends Base {
     // this.renderJson('ssss');
   }
 
-  async demo2(){
-    let data = await 111;
-    return data;
-  }
-
-  async demo1() {
-    await this.render('../test.html', {
-      name: 'wanglin',
-      content: '这是测试的内容'
-    });
-    // console.log(content);
-    // return content;
+  page(){
+    this.page.max(11111);
+    console.log('单页！！！');
   }
 };

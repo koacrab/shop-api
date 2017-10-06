@@ -4,14 +4,14 @@ module.exports = {
     status: true,
   },
 
+  //libs方法
+  'utils': {
+    status: true,
+  },
+
   //body
   'body': {
     status: false,
-  },
-
-  //控制器
-  'utils': {
-    status: true,
   },
 
   //static
