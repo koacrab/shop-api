@@ -25,11 +25,16 @@ module.exports = {
 
   //代理
   'proxy': {
-    status: false,
+    status: true,
   },
 
   //控制器
   'controllers': {
+    status: true,
+  },
+
+  //模型
+  'models': {
     status: true,
   },
 

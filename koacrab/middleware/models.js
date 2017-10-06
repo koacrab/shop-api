@@ -1,36 +1,33 @@
 'use strict'
 /**
- * 控制器中间件
+ * 模型中间件
  */
 const fs = require('fs');
 const path = require('path');
 const config = require('../config/index.js');
 
 module.exports = function() {
-  return function controllers(ctx, next) {
-    ctx.controller = loadController();
-
-    ctx.isGet = isGet(ctx);
-    ctx.isPost = isPost(ctx);
+  return function models(ctx, next) {
+    ctx.model = Object.assign(ctx, loadModel());
 
     return next();
   }
 };
 
 // 加载控制器
-function loadController() {
-  // 控制器缓存
-  let controllers = {};
-  let pathObj = readDirSync(process.cwd() + '/' + config.controllers || 'controllers');
+function loadModel() {
+  // 模型缓存
+  let models = {};
+  let pathObj = readDirSync(process.cwd() + '/' + config.models || 'models');
   let tempObj = {};
 
   for (let item of Object.keys(pathObj)) {
     // tempObj[item] = new (require(pathObj[item]));
     tempObj[item] = require(pathObj[item]);
-    Object.assign(controllers, tempObj);
+    Object.assign(models, tempObj);
   }
 
-  return controllers;
+  return models;
 }
 
 // 读取控制器目录
@@ -59,12 +56,3 @@ function readDirSync(dir, type) {
 
   return children;
 }
-
-function isGet(ctx) {
-  return ctx.request.method === 'GET' || false;
-}
-
-function isPost(ctx) {
-  return ctx.request.method === 'POST' || false;
-}
-

@@ -1,5 +1,5 @@
 let Base = require('../base.js');
-let news = new (require('../../models/index.js'));
+let news = new (require('../../models/news.js'));
 
 module.exports = class Index extends Base {
   constructor() {
@@ -59,6 +59,9 @@ module.exports = class Index extends Base {
   }
 
   page(){
+    console.log(this);
+    let test = new this.controller['admin/index'];
+    test.test();
     this.page.max(11111);
     console.log('单页！！！');
   }

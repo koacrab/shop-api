@@ -5,6 +5,7 @@ module.exports = class News {
   constructor() {
     console.log('实例化模块……');
   }
+
   getUserInfo(userid) {
     let connection = mysql.createConnection({
       host: '127.0.0.1',
