@@ -8,7 +8,6 @@ module.exports = class Index extends Base {
   }
 
   async login() {
-    console.log(this.request.method);
     let data = {test:'test.......'};
     await this.render('admin/view/login.html', data);
   }

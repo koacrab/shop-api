@@ -10,6 +10,9 @@ module.exports = function() {
   return function controllers(ctx, next) {
     ctx.controller = loadController();
 
+    ctx.isGet = isGet(ctx);
+    ctx.isPost = isPost(ctx);
+
     return next();
   }
 };
@@ -32,6 +35,7 @@ function loadController() {
 
 // 读取控制器目录
 let children = {};
+
 function readDirSync(dir, type) {
   fs.readdirSync(dir).forEach(function(filename) {
     let filePath = dir + "/" + filename;
@@ -41,10 +45,10 @@ function readDirSync(dir, type) {
     if (stat && stat.isDirectory()) {
       readDirSync(filePath, filename);
     } else {
-      let baseName ='';
-      if(type){
+      let baseName = '';
+      if (type) {
         baseName = type + '/' + path.basename(filename, '.js');
-      }else{
+      } else {
         baseName = path.basename(filename, '.js');
       }
 
@@ -55,3 +59,12 @@ function readDirSync(dir, type) {
 
   return children;
 }
+
+function isGet(ctx) {
+  return ctx.request.method === 'GET' || false;
+}
+
+function isPost(ctx) {
+  return ctx.request.method === 'POST' || false;
+}
+
