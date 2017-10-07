@@ -14,8 +14,9 @@ module.exports = class Index extends Base {
   async login() {
     console.log('login...');
     let content = await this.proxy('https://www.baidu.com');
+    // let content = await this.proxy('https://api.github.com/repos/vmg/redcarpet/issues/629');
 
-    console.log('返回的内容：', this.contentData);
+    console.log('返回的内容：', content);
     let data = {test:'test.......'};
     await this.render('admin/view/login.html', data);
   }

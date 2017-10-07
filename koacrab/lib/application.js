@@ -23,7 +23,7 @@ module.exports = class Application {
     this.conf = {};
   }
 
-  init() {
+  init(port) {
     // 把中间件注册到系统里
     middleware(this);
 
@@ -34,7 +34,7 @@ module.exports = class Application {
     console.log(statics(this.root + '/theme/home/'));
     this.use(statics(this.root + '/theme/home/'));
 
-    this.run(config.port);
+    this.run(port || config.port, 1,2);
     this.conf = this.loadConf(this.root);
   }
 
@@ -47,7 +47,7 @@ module.exports = class Application {
   run(...args) {
     this.koa.listen(...args);
 
-    console.log('app in running in port ' + config.port);
+    console.log('app running on port ' + args[0]);
   }
 
   // 注册中间件
