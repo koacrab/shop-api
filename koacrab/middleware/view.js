@@ -26,9 +26,10 @@ module.exports = function() {
             result = error.message;
           }
 
+          // 加了个这个就会报错：Can't set headers after they are sent.
           ctx.type = 'text/html';
           ctx.body = result;
-          resolve();
+          resolve(result);
         })
       });
     }

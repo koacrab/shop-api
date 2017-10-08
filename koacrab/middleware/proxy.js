@@ -7,16 +7,6 @@ const request = require('request');
 
 module.exports = function() {
   return async function proxy(ctx, next) {
-    /*ctx.proxy = function(url) {
-      return new Promise(function(resolve, reject) {
-        request(url, function(error, response, body) {
-          console.log('url=', url)
-          resolve(body);
-          ctx.contentData = body;
-        });
-      })
-    }*/
-
     ctx.proxy = function(url) {
       return new Promise(function(resolve, reject) {
         request(url, function(err, response, body) {
@@ -29,7 +19,7 @@ module.exports = function() {
               // ctx.body = body
               // console.log('body===',body);
               resolve(body);
-              // ctx.contentData = body;
+              ctx.contentData = body;
             } else {
               console.error('middleware load data error: ', err, err.stack)
             }
@@ -37,9 +27,9 @@ module.exports = function() {
             console.error('proxy middleware load error: ', e)
           }
         });
-      })
+      });
     };
 
-    return await next();
+    await next();
   }
 }
