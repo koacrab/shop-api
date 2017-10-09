@@ -4,6 +4,7 @@ mysql
 static
 router,restful
 .html后缀
+设计koacrab的字符
 
 =============
 原理：

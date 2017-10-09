@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cli-color": "^1.2.0",
     "glob": "^7.1.2",
     "koa-bodyparser": "^4.2.0",
     "koa-static": "^4.0.1",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "boom": "^6.0.0",
-    "raven": "^2.2.1"
+    "raven": "^2.2.1",
+    "request-promise": "^4.2.2"
   }
 }

@@ -6,8 +6,8 @@
 const request = require('request');
 
 module.exports = function() {
-  return async function proxy(ctx, next) {
-    ctx.proxy = function(url) {
+  return async function proxy1(ctx, next) {
+    ctx.proxy1 = function(url) {
       return new Promise(function(resolve, reject) {
         request(url, function(err, response, body) {
           try {
@@ -17,9 +17,9 @@ module.exports = function() {
                 // delete header['transfer-encoding'] // 删除该字段，因为现在是下载完毕处理后才发送
                 // ctx.response.set(header)
               // ctx.body = body
-              // console.log('body===',body);
-              resolve(body);
-              ctx.contentData = body;
+
+              // ctx.contentData = body;
+              resolve(11111);
             } else {
               console.error('middleware load data error: ', err, err.stack)
             }

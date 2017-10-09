@@ -21,9 +21,9 @@ function parseMime(url) {
  * @param {Object} options 配置项
  * @param {String} options.dir koa-grace app dir
  * @param {object} options.maxage options.maxage config
- * 
- * @return {function}     
- *   
+ *
+ * @return {function}
+ *
  * @todo COMBO静态文件的功能
  * @todo 需要添加测试用例
  */

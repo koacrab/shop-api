@@ -1,3 +1,12 @@
+/***
+ *      _  __                    ___                    _
+ *     | |/ /    ___    __ _    / __|     _ _   __ _   | |__
+ *     | ' <    / _ \  / _` |  | (__     | '_| / _` |  | '_ \
+ *     |_|\_\   \___/  \__,_|   \___|   _|_|_  \__,_|  |_.__/
+ *    _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
+ *    "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
+ */
+// http://patorjk.com/software/taag/#p=testall&c=c&f=Graffiti&t=KoaCrab
 const Koa = require('koa');
 const path = require('path');
 const fs = require('fs');
@@ -8,6 +17,7 @@ const config = require('../config/index.js');
 const pkg = require('../../package.json');
 const log = require('./log.js');
 const middleware = require('../middleware/index.js');
+const color = require('cli-color');
 
 const statics = require('koa-static');
 
@@ -34,7 +44,8 @@ module.exports = class Application {
     console.log(statics(this.root + '/theme/home/'));
     this.use(statics(this.root + '/theme/home/'));
 
-    this.run(port || config.port, 1,2);
+    this.printChart();
+    this.run(port || config.port, 1, 2);
     this.conf = this.loadConf(this.root);
   }
 
@@ -63,6 +74,23 @@ module.exports = class Application {
   // 设置配置
   setConf(file, name, value) {
 
+  }
+
+  // 输出字符
+  printChart() {
+    console.log(color.green(`
+    *******************************************************************
+    *                                                                 *
+    *      _  __                    ___                    _          *
+    *     | |/ /    ___    __ _    / __|     _ _   __ _   | |__       *
+    *     | ' <    / _ \\  / _' |  | (__     | '_| / _' |  | '_ \\      *
+    *     |_|\\_\\   \\___/  \\__,_|   \\___|   _|_|_  \\__,_|  |_.__/      *
+    *    _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|     *
+    *    "'-0-0-'"'-0-0-'"'-0-0-'"'-0-0-'"'-0-0-'"'-0-0-'"'-0-0-'     *
+    *                                                                 *
+    *                                                                 *
+    *******************************************************************
+    `));
   }
 
   // 加载配置文件
