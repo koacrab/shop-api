@@ -27,6 +27,7 @@ module.exports = class Application {
 
     this.middlewares = [];
     this.koa = koacrab.koa = new Koa();
+    // this.koa.proxy = true;
     this.crab = {};
     // 项目运行的根路径
     this.root = process.cwd();

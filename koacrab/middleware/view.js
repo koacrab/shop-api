@@ -9,6 +9,8 @@ const { resolve, join } = require('path');
 
 module.exports = function() {
   return async function view(ctx, next) {
+    if (ctx.render) return await next();
+
     ctx.renderJson = renderJson;
     ctx.renderText = renderText;
 

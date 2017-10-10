@@ -16,7 +16,9 @@ module.exports = class Index extends Base {
     console.log('后置操作……');
   }
 
-  index() {
+  async index() {
+    let contents = await this.httpProxy('https://www.baidu.com');
+    console.log(contents);
     let data = {'test': 'test....'};
     this.render('index/view/index.html', data);
   }

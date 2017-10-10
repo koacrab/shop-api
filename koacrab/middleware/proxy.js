@@ -3,23 +3,18 @@
  * 代理中间件
  */
 
-const request = require('request');
+const request = require('request-promise');
 
 module.exports = function() {
-  return async function proxy1(ctx, next) {
-    ctx.proxy1 = function(url) {
-      return new Promise(function(resolve, reject) {
-        request(url, function(err, response, body) {
+  return async function httpProxy(ctx, next) {
+    if (ctx.httpProxy) return await next();
+
+    ctx.httpProxy = function(url) {
+      return new Promise((resolve, reject) => {
+        request(url, {}, (err, response, body) => {
           try {
             if (!err) {
-                // var header = handleHeader(response.headers)
-                // delete header['content-length'] // 避免长度和设置body长度不一致问题
-                // delete header['transfer-encoding'] // 删除该字段，因为现在是下载完毕处理后才发送
-                // ctx.response.set(header)
-              // ctx.body = body
-
-              // ctx.contentData = body;
-              resolve(11111);
+              return resolve('test');
             } else {
               console.error('middleware load data error: ', err, err.stack)
             }
@@ -32,4 +27,34 @@ module.exports = function() {
 
     await next();
   }
+}
+
+function test(url, resolve) {
+  return request(url, {}, (err, response, body) => {
+    try {
+      if (!err) {
+        resolve('test');
+      } else {
+        console.error('middleware load data error: ', err, err.stack)
+      }
+    } catch (e) {
+      console.error('proxy middleware load error: ', e)
+    }
+  });
+}
+
+function handleHeader(header) {
+  if (!header) {
+    return
+  }
+  for (var attr in header) {
+    var trim = attr.trim()
+    if (trim.toLowerCase() == 'content-length') {
+      delete header[attr]
+    } else if (trim != attr) {
+      header[trim] = header[attr]
+      delete header[attr]
+    }
+  }
+  return header
 }
