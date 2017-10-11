@@ -30,20 +30,6 @@ module.exports = function() {
   }
 }
 
-function test(url, resolve) {
-  return request(url, {}, (err, response, body) => {
-    try {
-      if (!err) {
-        resolve('test');
-      } else {
-        console.error('middleware load data error: ', err, err.stack)
-      }
-    } catch (e) {
-      console.error('proxy middleware load error: ', e)
-    }
-  });
-}
-
 function handleHeader(header) {
   if (!header) {
     return

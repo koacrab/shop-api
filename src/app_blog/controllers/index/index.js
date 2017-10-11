@@ -1,5 +1,6 @@
 let Base = require('../base.js');
-let news = new (require('../../models/news.js'));
+let markdown = require('markdown-it');
+let fs = require('fs');
 
 module.exports = class Index extends Base {
   constructor() {
@@ -7,38 +8,38 @@ module.exports = class Index extends Base {
     this.name = 'test1111';
   }
 
-  _before_say(){
-    this.utils.test('aaaaaa');
-    console.log('前置操作……');
-  }
-
-  _after_say(){
-    console.log('后置操作……');
-  }
-
   async index() {
-    let contents = await this.httpProxy('https://www.baidu.com');
-    console.log(contents);
-    let data = {'test': 'test....'};
+    let data = {
+      'test': 'test....'
+    };
+
+    // console.log(this);
+    // this.page();
+    this.test();
+
+
+    // await this.currController.getType(process.cwd());
     this.render('index/view/index.html', data);
   }
 
+  test(){
+    console.log('test..1111..');
+    // this.page();
+  }
+
   async list(name) {
-    console.log('test=====',koacrab.version);
+    console.log('test=====', koacrab.version);
     this.utils.test('bbbb');
     this.page.getSize(123);
     // 打印配置文件
-    // console.log(this.conf.username);
-    console.log('say11111...');
-    console.log(news.getUserInfo(333));
 
-    // https://api.github.com/repositories/50917994
-
-    let data = {test:'test.......'};
+    let data = {
+      test: 'test.......'
+    };
     await this.render('index/view/index.html', data);
   }
 
-  show() {
+  async show() {
     let ctr = this.hzlCtr;
     let act = this.hzlAct;
 
@@ -60,11 +61,58 @@ module.exports = class Index extends Base {
     // this.renderJson('ssss');
   }
 
-  page(){
-    console.log(this);
+  async page() {
+    /*console.log(this);
     let test = new this.controller['admin/index'];
     test.test();
-    this.page.max(11111);
+    this.page.max(11111);*/
     console.log('单页！！！');
+  }
+
+  async getType(dirs) {
+    let dir = dirs + '/markdown/';
+    let children = [];
+
+    fs.readdirSync(dir).forEach(function(filename) {
+      console.log(dir, filename);
+      let filePath = dir + "/" + filename;
+      let stat = fs.statSync(filePath);
+      let tempObj = {};
+
+      if (stat && stat.isDirectory()) {
+        // readDirSync(filePath, filename);
+      } else {
+        let baseName = path.basename(filename);
+
+        tempObj[baseName] = filePath;
+        Object.assign(children, tempObj);
+      }
+    });
+
+    console.log(children);
+  }
+
+  async readDirSync(dir, type) {
+    fs.readdirSync(dir).forEach(function(filename) {
+      let filePath = dir + "/" + filename;
+      let stat = fs.statSync(filePath);
+      let tempObj = {};
+
+      if (stat && stat.isDirectory()) {
+        readDirSync(filePath, filename);
+      } else {
+        let baseName = '';
+        if (type) {
+          baseName = type + '/' + path.basename(filename, '.js');
+        } else {
+          baseName = path.basename(filename, '.js');
+        }
+
+        tempObj[baseName] = filePath;
+        Object.assign(children, tempObj);
+      }
+    });
+
+    return children;
   }
 };

@@ -1,10 +1,11 @@
 =============
-proxy
+proxy https 参数 get post 多请求合并
 mysql
 static
 router,restful
 .html后缀
 设计koacrab的字符
+markdown
 
 =============
 原理：

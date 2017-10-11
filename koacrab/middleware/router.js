@@ -1,10 +1,11 @@
 'use strict'
 /**
  * 路由中间件
+ * restful
+ *
  */
 module.exports = function() {
   return async function router(ctx, next) {
-    console.log('进来路由器了……。');
     if (ctx.url === '/favicon.ico') {
       return false;
     }

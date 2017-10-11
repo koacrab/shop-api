@@ -8,7 +8,6 @@ const { resolve, join } = require('path');
 // let engine = null;
 
 module.exports = function() {
-  console.log(7);
   return async function view(ctx, next) {
     if (ctx.render) return await next();
 
@@ -21,14 +20,10 @@ module.exports = function() {
     };
 
     let env = nunjucks.configure(process.cwd() + '/theme', options);
-    console.log(8);
 
     ctx.render = (file, data = {}) => {
-      console.log(9);
       return new Promise((resolve, reject) => {
-        console.log(10);
         env.render(file, data, (error, result) => {
-          console.log(11);
           if (error) {
             result = error.message;
           }
@@ -41,10 +36,7 @@ module.exports = function() {
       });
     }
 
-    console.log(12);
-
     await next();
-    console.log(13);
   }
 };
 

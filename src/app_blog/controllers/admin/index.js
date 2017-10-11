@@ -13,8 +13,8 @@ module.exports = class Index extends Base {
 
   async login() {
     console.log('login...');
-    // let content = await this.httpProxy('https://www.baidu.com');
-    let content = await this.httpProxy('https://api.github.com/repos/vmg/redcarpet/issues/629');
+    let content = await this.httpProxy('https://www.baidu.com');
+    // let content = await this.httpProxy('https://api.github.com/repos/vmg/redcarpet/issues/629');
 
 
     console.log('proxy返回的内容:', this.contentData);
