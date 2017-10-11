@@ -3,16 +3,26 @@
  * 模板中间件
  */
 const nunjucks = require('nunjucks');
-const { resolve, join } = require('path');
+const {
+  resolve,
+  join
+} = require('path');
 // let cons = require('grace-consolidate');
 // let engine = null;
 
 module.exports = function() {
+  let mime = ['text/plain','text/html','application/json'];
+
   return async function view(ctx, next) {
     if (ctx.render) return await next();
 
-    ctx.renderJson = renderJson;
-    ctx.renderText = renderText;
+    ctx.renderJson = function(data) {
+      return renderJson(ctx, data);
+    };
+
+    ctx.renderText = function(data) {
+      return renderText(ctx, data);
+    };
 
     let options = {
       autoescape: true,
@@ -34,19 +44,20 @@ module.exports = function() {
           resolve(result);
         })
       });
-    }
+    };
 
     await next();
   }
 };
 
-function renderJson(data) {
-  console.log('json...');
-  return data;
+function renderJson(ctx, data) {
+  ctx.type = 'application/json';
+  return ctx.body = data;
 }
 
-function renderText(data) {
-  return data;
+function renderText(ctx, data) {
+  ctx.type = 'text/plain';
+  return ctx.body = data;
 }
 
 function render(ctx, next, path, options) {

@@ -1,0 +1,15 @@
+{
+  "verbose": true,
+  "watch": [
+    "../../koacrab/*",
+    "*"
+  ],
+  "ignore": [
+    ".git",
+    "node_modules/*"
+  ],
+  "execMap": {
+    "": "node",
+    "js": "node --harmony"
+  }
+}
