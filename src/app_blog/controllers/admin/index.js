@@ -13,9 +13,9 @@ module.exports = class Index extends Base {
 
   async login() {
     console.log('login...');
-    console.log(111);
+    console.log(3.1);
     let contents = await this.proxy1('https://www.baidu.com');
-    console.log(222);
+    console.log(3.2);
     // let content = await this.proxy('https://api.github.com/repos/vmg/redcarpet/issues/629');
 
 
@@ -23,7 +23,7 @@ module.exports = class Index extends Base {
     // console.log('proxy返回的内容1:', contents);
     let data = {test:'test.......'};
     return await this.render('admin/view/login.html', data);
-    console.log(333);
+    console.log(3.3);
   }
 
   async register(name) {

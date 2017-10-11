@@ -6,13 +6,13 @@
 const request = require('request');
 
 module.exports = function() {
-  console.log(0);
+  console.log(1);
   return async function proxy1(ctx, next) {
-    console.log(1);
+    console.log(1.1);
     ctx.proxy1 = function(url) {
-      console.log(2);
+      console.log(1.2);
       return new Promise(function(resolve, reject) {
-        console.log(3);
+        console.log(1.3);
         request(url, function(err, response, body) {
 
           try {
@@ -24,8 +24,9 @@ module.exports = function() {
               // ctx.body = body
 
               // ctx.contentData = body;
-              console.log(4);
+              console.log(1.4);
               resolve(11111);
+              console.log(1.5);
             } else {
               console.error('middleware load data error: ', err, err.stack)
             }
@@ -36,10 +37,10 @@ module.exports = function() {
       });
     };
 
-    console.log(5);
+    console.log(1.6);
 
-    await next();
+    return await next();
 
-    console.log(6);
+    console.log(1.7);
   }
 }

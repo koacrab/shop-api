@@ -6,7 +6,7 @@ module.exports = {
 
   //libs方法
   'utils': {
-    status: true,
+    status: false,
   },
 
   //body
@@ -35,7 +35,7 @@ module.exports = {
 
   //模型
   'models': {
-    status: true,
+    status: false,
   },
 
   //body_parser

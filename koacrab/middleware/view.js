@@ -8,7 +8,7 @@ const { resolve, join } = require('path');
 // let engine = null;
 
 module.exports = function() {
-  console.log(7);
+  console.log(2.1);
   return async function view(ctx, next) {
     ctx.renderJson = renderJson;
     ctx.renderText = renderText;
@@ -19,14 +19,14 @@ module.exports = function() {
     };
 
     let env = nunjucks.configure(process.cwd() + '/theme', options);
-    console.log(8);
+    console.log(2.2);
 
     ctx.render = (file, data = {}) => {
-      console.log(9);
+      console.log(2.3);
       return new Promise((resolve, reject) => {
-        console.log(10);
+        console.log(2.4);
         env.render(file, data, (error, result) => {
-          console.log(11);
+          console.log(2.5);
           if (error) {
             result = error.message;
           }
@@ -39,10 +39,10 @@ module.exports = function() {
       });
     }
 
-    console.log(12);
+    console.log(2.6);
 
-    await next();
-    console.log(13);
+    return await next();
+    console.log(2.7);
   }
 };
 
