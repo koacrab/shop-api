@@ -14,7 +14,8 @@ module.exports = function() {
         request(url, {}, (err, response, body) => {
           try {
             if (!err) {
-              return resolve('test');
+              this.contentData = body;
+              resolve(body);
             } else {
               console.error('middleware load data error: ', err, err.stack)
             }

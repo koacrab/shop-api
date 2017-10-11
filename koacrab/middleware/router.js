@@ -51,16 +51,16 @@ module.exports = function() {
 
       // 前置
       if(ctrsFn.indexOf('_before_' + act) !== -1){
-        tmp['currController']['_before_' + act].call(obj);
+        await tmp['currController']['_before_' + act].call(obj);
       }
 
       // 正常操作
       ctx.crabFn = tmp['currController'][act];
-      ctx.crabFn.call(obj);
+      await ctx.crabFn.call(obj);
 
       // 后置
       if(ctrsFn.indexOf('_after_' + act) !== -1){
-        tmp['currController']['_after_' + act].call(obj);
+        await tmp['currController']['_after_' + act].call(obj);
       }
     } catch (err) {
       console.error(err);
