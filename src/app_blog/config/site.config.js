@@ -1,4 +1,5 @@
 module.exports = {
   port: 1124,
-  username:'haizlin'
+  username:'haizlin',
+  docRoot:'markdown'
 }

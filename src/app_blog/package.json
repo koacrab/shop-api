@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "markdown-it": "^8.4.0"
+  }
+}
