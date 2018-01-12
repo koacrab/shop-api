@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="/san/img/favicon.ico" type="image/x-icon" />
+  <title>koacrab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="koacrab" />
+  <meta property="og:url" content="http://ecomfe.github.io/index.html" />
+  <meta property="og:site_name" content="koacrab" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="koacrab" />
+  <link rel="alternate" href="/atom.xml" title="koacrab" type="application/atom+xml" />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/article.css" />
+  <link rel="stylesheet" href="css/code.css" />
+
+  <!-- search -->
+  <link rel="stylesheet" href="css/docsearch.min.css" />
+ </head>
+ <body id="home">
+  <div class="overlay">
+   <iframe src="https://ghbtns.com/github-btn.html?user=ecomfe&amp;repo=san&amp;type=star&amp;count=true&amp;size=large" class="home-iframe"></iframe>
+   <img height="220" src="images/logo-colorful.svg" class="logo" alt="LOGO" title="koacrab" />
+   <h1>KoaCrab</h1>
+   <p class="overlay-p">基于Koa2搭建的Node.js Web极简高性能开源框架</p>
+   <a href="/san/tutorial/start/" class="get-start">马上开始</a>
+   <p class="overlay-p" style="width: 700px; text-align: left;">&nbsp;npm install -g koacrab</p>
+  </div>
+  <!-- NavBar-->
+  <nav class="navbar-default" role="navigation">
+   <div class="navbar-container">
+    <a href="#home"><img class="nav-logo" src="images/logo2.png" /></a>
+    <div class="navbar-right">
+     <ul class="nav navbar-nav">
+      <li><a class="nav-a1" href="#Features">特性</a></li>
+      <li><a class="nav-a2" href="#Resources">学习</a></li>
+      <li><a class="nav-a3" href="#Facilities">工具</a></li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <!-- feature-->
+  <div class="feature-container" id="Features">
+   <section class="feature">
+    <div class="feature-row">
+     <div class="feature-item">
+      <embed src="js/8.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>HTML模版</h5>
+      <p>声明式的模板，在编写视图时就像是在写一个普通的页面，更符合 HTML 开发人员的习惯。</p>
+     </div>
+     <div class="feature-item">
+      <embed src="js/1.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>数据驱动</h5>
+      <p>修改数据，视图引擎会根据绑定关系自动刷新视图，从此摆脱手工调用 DOM API 的繁琐与可能的遗漏。</p>
+     </div>
+     <div class="feature-item">
+      <embed src="js/2.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>组件化</h5>
+      <p>组件是数据、逻辑与视图的聚合体。通过组件，我们封装独立的功能区块，小到输入组合，大到一个页面。</p>
+     </div>
+    </div>
+    <div class="feature-row">
+     <div class="feature-item">
+      <embed src="js/3.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>高性能视图</h5>
+      <p>通过修改数据的方法，视图引擎能够直接刷新需要变更的视图区域，无需进行任何检测，性能更高。</p>
+     </div>
+     <div class="feature-item">
+      <embed src="js/5.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>组件反解</h5>
+      <p>为首屏时间优化，服务端通常直接输出HTML。我们能从现有的元素中反向解析出组件，并构建绑定关系。</p>
+     </div>
+     <div class="feature-item">
+      <embed src="js/4.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>体积小巧</h5>
+      <p>12k (gzipped) 的体积，无需担心对页面下载带来负担。体积强迫症患者的福音。</p>
+     </div>
+    </div>
+    <div class="feature-row">
+     <div class="feature-item">
+      <embed src="js/9.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>良好的兼容性</h5>
+      <p>通过方法修改数据的另一好处是，可以获得更好的浏览器兼容性。毕竟有时我们产品的受众用户有点死板。</p>
+     </div>
+     <div class="feature-item">
+      <embed src="js/6.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>模块管理自由</h5>
+      <p>项目中可以任意选择 ESNext Module 或 AMD 管理模块。当然，如果你想要用全局变量也是支持的。</p>
+     </div>
+     <div class="feature-item">
+      <embed src="js/7.svg" width="44" height="44" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+      <h5>引用方便</h5>
+      <p>支持多种引用方式：NPM、GitHub、下载、HTTP 与 HTTPS CDN，让开发和线上引用更便利。</p>
+     </div>
+    </div>
+   </section>
+  </div>
+  <!--Resources -->
+  <section id="Resources" class="resource">
+   <hr />
+   <div class="resource-title">
+    <h4>学习 KoaCrab</h4>
+    <p>作为一个初学者，你需要知道的关于koacrab的一切</p>
+   </div>
+   <div class="resource-row">
+    <div class="resource-block">
+     <a class="resource-item" href="/san/tutorial/start/">
+      <div class="resource-item-top resource-item-top-one">
+       <div style="width:130px;height:130px;display:inline-block;" class="bodymovin" data-movpath="/san/js/tutor.json">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;"><defs><clipPath id="animationMask_tARcVgWHEF"><rect width="128" height="128" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#animationMask_tARcVgWHEF)"><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="0.6" d="M0 0 M33.016,91 C33.004999999999995,91.166 33,91.333 33,91.5 C33,100.06 46.879000000000005,107 64,107 C81.121,107 95,100.06 95,91.5 C95,91.333 94.99499999999999,91.166 94.984,91 C94.984,91 95,91 95,91 C95,91 95,57 95,57 C95,57 33,57 33,57 C33,57 33,91 33,91 C33,91 33.016,91 33.016,91z"></path></g><g transform="matrix(1,0,0,1,0,-1)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M67.578,19.789 C67.578,19.789 115.845,43.922 115.845,43.922 C117.821,44.91 118.622,47.313 117.634,49.289 C117.247,50.063 116.619,50.691 115.845,51.078 C115.845,51.078 67.578,75.211 67.578,75.211 C65.32600000000001,76.337 62.675000000000004,76.337 60.423,75.211 C60.423,75.211 12.156,51.078 12.156,51.078 C10.18,50.09 9.379000000000001,47.687 10.367,45.711 C10.754000000000001,44.937 11.382000000000001,44.309 12.156,43.922 C12.156,43.922 60.423,19.789 60.423,19.789 C62.675000000000004,18.663 65.32600000000001,18.663 67.578,19.789z"></path></g><g transform="matrix(1,0,0,1,2.5,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M17,57 C17,57 21,59 21,59 C21,59 21,87 21,87 C21,88.105 20.105,89 19,89 C17.895,89 17,88.105 17,87 C17,87 17,57 17,57z"></path></g></g></svg>
+       </div>
+      </div>
+      <div class="resource-item-bottom">
+       <h5>教程</h5>
+       <p>教程是入门的捷径，请从这里开始了解koacrab。</p>
+      </div> </a>
+    </div>
+    <div class="resource-block" href="/san/layout/">
+     <a class="resource-item" href="/san/practice/">
+      <div class="resource-item-top resource-item-top-two">
+       <div style="width:130px;height:130px;display:inline-block;" class="bodymovin" data-movpath="/san/js/compass.json">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;"><defs><clipPath id="animationMask_6Xc7TTAYx5"><rect width="128" height="128" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#animationMask_6Xc7TTAYx5)"><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="0.5" d="M0 0 M64,116 C35.281,116 12,92.719 12,64 C12,35.281 35.281,12 64,12 C92.719,12 116,35.281 116,64 C116,92.719 92.719,116 64,116z"></path></g><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M55.518,55.586 C80.045,41.816 92.536,35.307 92.99,36.058 C93.294,36.561 86.458,48.679 72.482,72.414 C47.955,86.184 35.464,92.693 35.01,91.942 C34.705999999999996,91.439 41.542,79.321 55.518,55.586zM0 0 M43,85 C43,85 68,70 68,70 C68,70 58,60 58,60 C58,60 43,85 43,85z"></path></g></g></svg>
+       </div>
+      </div>
+      <div class="resource-item-bottom">
+       <h5>指南</h5>
+       <p>我们正在编写指南手册，以指导各种应用场景下怎么使用koacrab。</p>
+      </div> </a>
+    </div>
+    <div class="resource-block">
+     <a class="resource-item" href="/san/example/">
+      <div class="resource-item-top resource-item-top-three">
+       <div style="width:130px;height:130px;display:inline-block;" class="bodymovin" data-movpath="/san/js/example.json">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;"><defs><clipPath id="animationMask_j5lNJbaLNM"><rect width="128" height="128" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#animationMask_j5lNJbaLNM)"><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="0.6" d="M0 0 M67.578,57.789 C67.578,57.789 112.845,80.422 112.845,80.422 C114.821,81.41 115.622,83.813 114.634,85.789 C114.247,86.563 113.619,87.191 112.845,87.578 C112.845,87.578 67.578,110.211 67.578,110.211 C65.32600000000001,111.337 62.675000000000004,111.337 60.423,110.211 C60.423,110.211 15.156,87.578 15.156,87.578 C13.18,86.59 12.379000000000001,84.187 13.367,82.211 C13.754000000000001,81.437 14.382000000000001,80.809 15.156,80.422 C15.156,80.422 60.423,57.789 60.423,57.789 C62.675000000000004,56.663000000000004 65.32600000000001,56.663000000000004 67.578,57.789z"></path></g><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="0.6" d="M0 0 M67.578,37.789 C67.578,37.789 112.845,60.422 112.845,60.422 C114.821,61.41 115.622,63.813 114.634,65.789 C114.247,66.563 113.619,67.191 112.845,67.578 C112.845,67.578 67.578,90.211 67.578,90.211 C65.32600000000001,91.337 62.675000000000004,91.337 60.423,90.211 C60.423,90.211 15.156,67.578 15.156,67.578 C13.18,66.59 12.379000000000001,64.187 13.367,62.211 C13.754000000000001,61.437 14.382000000000001,60.809 15.156,60.422 C15.156,60.422 60.423,37.789 60.423,37.789 C62.675000000000004,36.663000000000004 65.32600000000001,36.663000000000004 67.578,37.789z"></path></g><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M67.578,17.789 C67.578,17.789 112.845,40.422 112.845,40.422 C114.821,41.41 115.622,43.813 114.634,45.789 C114.247,46.563 113.619,47.191 112.845,47.578 C112.845,47.578 67.578,70.211 67.578,70.211 C65.32600000000001,71.337 62.675000000000004,71.337 60.423,70.211 C60.423,70.211 15.156,47.578 15.156,47.578 C13.18,46.59 12.379000000000001,44.187 13.367,42.211 C13.754000000000001,41.437 14.382000000000001,40.809 15.156,40.422 C15.156,40.422 60.423,17.789 60.423,17.789 C62.675000000000004,16.663 65.32600000000001,16.663 67.578,17.789z"></path></g></g></svg>
+       </div>
+      </div>
+      <div class="resource-item-bottom">
+       <h5>示例</h5>
+       <p>这里展示了一些简单例子，以及在实际项目如何使用koacrab。</p>
+      </div> </a>
+    </div>
+    <div class="resource-block">
+     <a class="resource-item" href="/san/doc/api/">
+      <div class="resource-item-top resource-item-top-four">
+       <div style="width:130px;height:130px;display:inline-block;" class="bodymovin" data-movpath="/san/js/api.json">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;"><defs><clipPath id="animationMask_UivlUM1TUe"><rect width="128" height="128" x="0" y="0"></rect></clipPath><clipPath id="Q6wJvuUmY7"><path fill="#ffffff" clip-rule="nonzero" d=" M33.909,22.597 C33.909,22.597 -8.091,93.751 -8.091,93.751 C-8.091,93.751 32.977,136.751 32.977,136.751 C32.977,136.751 106.977,93.597 106.977,93.597 C106.977,93.597 33.909,22.597 33.909,22.597" fill-opacity="1"></path></clipPath></defs><g clip-path="url(#animationMask_UivlUM1TUe)"><g clip-path="url(#Q6wJvuUmY7)" transform="matrix(1,0,0,1,0.5,-0.5)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M22.736,112.08 C21.174,113.642 18.642,113.642 17.08,112.08 C15.517999999999999,110.518 15.517999999999999,107.985 17.08,106.423 C17.08,106.423 22.736,100.766 22.736,100.766 C22.833000000000002,100.67 22.933,100.579 23.037,100.494 C14.645999999999999,88.805 15.578,72.57 25.918,62.229 C25.918,62.229 32.636,55.511 32.636,55.511 C34.589000000000006,53.559000000000005 37.754,53.559000000000005 39.707,55.511 C39.707,55.511 75.062,90.867 75.062,90.867 C77.015,92.819 77.015,95.985 75.062,97.938 C75.062,97.938 68.345,104.655 68.345,104.655 C57.528,115.47200000000001 40.260999999999996,115.993 28.494,106.318 C28.472,106.342 26.553,108.263 22.736,112.08zM0 0 M58.092,51.269 C59.653999999999996,52.830999999999996 59.653999999999996,55.364000000000004 58.092,56.926 C58.092,56.926 49.607,65.411 49.607,65.411 C49.607,65.411 43.95,59.754 43.95,59.754 C43.95,59.754 52.435,51.269 52.435,51.269 C53.997,49.707 56.53,49.707 58.092,51.269zM0 0 M79.305,72.482 C80.867,74.044 80.867,76.577 79.305,78.139 C79.305,78.139 70.82,86.624 70.82,86.624 C70.82,86.624 65.163,80.967 65.163,80.967 C65.163,80.967 73.648,72.482 73.648,72.482 C75.21,70.92 77.74300000000001,70.92 79.305,72.482z"></path></g><g transform="matrix(1,0,0,1,-3,2.5)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="0.6" d="M0 0 M105.115,67.885 C105.115,67.885 98.396,74.604 98.396,74.604 C96.444,76.556 93.279,76.556 91.326,74.604 C91.326,74.604 55.971,39.248 55.971,39.248 C54.017999999999994,37.296 54.017999999999994,34.13 55.971,32.177 C55.971,32.177 62.689,25.46 62.689,25.46 C73.029,15.119000000000002 89.26499999999999,14.187 100.954,22.578 C101.03899999999999,22.474 101.129,22.374 101.226,22.278 C101.226,22.278 106.883,16.621 106.883,16.621 C108.445,15.059 110.97800000000001,15.059 112.54,16.621 C114.102,18.183 114.102,20.715999999999998 112.54,22.278 C112.54,22.278 106.883,27.934 106.883,27.934 C116.453,39.802 115.93199999999999,57.068000000000005 105.115,67.885z"></path></g></g></svg>
+       </div>
+      </div>
+      <div class="resource-item-bottom">
+       <h5>组件 API</h5>
+       <p>当你想不起来组件的接口时，请查阅这里。</p>
+      </div> </a>
+    </div>
+   </div>
+  </section>
+  <!-- facilities -->
+  <section class="facility" id="Facilities">
+   <hr />
+   <div class="facility-title">
+    <h4>工具</h4>
+    <p>这些工具可以帮助你快速构建应用</p>
+   </div>
+   <div class="facility-row">
+    <div class="facility-block">
+     <a class="facility-item" href="https://github.com/ecomfe/san-router" target="_blank">
+      <div class="facility-item-top facility-item-top-one">
+       <div style="width:130px;height:130px;display:inline-block;" class="bodymovin" data-movpath="/san/js/test.json">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;"><defs><clipPath id="animationMask_PAFUkCZjwY"><rect width="128" height="128" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#animationMask_PAFUkCZjwY)"><g transform="matrix(1,0,0,1,64,64)" opacity="1" style="user-select: none;"><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.2" d="M0 0 M49,-26 C49,-26 49,26 49,26 C49,26 0.559,46 0.559,46 C0.559,46 -49,26 -49,26 C-49,26 -49,-26 -49,-26 C-49,-26 0.559,-46 0.559,-46 C0.559,-46 49,-26 49,-26z"></path></g><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.2" d="M0 0 M49,26 C49,26 0.559,46 0.559,46 C0.559,46 -49,26 -49,26 C-49,26 0.559,4 0.559,4 C0.559,4 49,26 49,26z"></path></g></g><g transform="matrix(1,0,0,1,64,59)" opacity="1" style="user-select: none;"><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.59" d="M0 0 M39.559,-44.612 C39.559,-44.612 39.559,-2.429 39.559,-2.429 C39.559,-2.429 0.262,13.796 0.262,13.796 C0.262,13.796 -39.941,-2.429 -39.941,-2.429 C-39.941,-2.429 -39.941,-44.612 -39.941,-44.612 C-39.941,-44.612 0.262,-60.837 0.262,-60.837 C0.262,-60.837 39.559,-44.612 39.559,-44.612z"></path></g><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.6" d="M0 0 M0.262,13.796 C0.262,13.796 -39.941,-2.429 -39.941,-2.429 C-39.941,-2.429 -39.941,-44.612 -39.941,-44.612 C-39.941,-44.612 0.262,-28.337 0.262,-28.337 C0.262,-28.337 0.262,13.796 0.262,13.796z"></path></g><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M39.559,-44.612 C39.559,-44.612 0.262,-28.704 0.262,-28.704 C0.262,-28.704 -39.941,-44.612 -39.941,-44.612 C-39.941,-44.612 0.262,-60.837 0.262,-60.837 C0.262,-60.837 39.559,-44.612 39.559,-44.612z"></path></g></g><g transform="matrix(1,0,0,1,64,64)" opacity="1" style="user-select: none;"><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.2" d="M0 0 M49,-26 C49,-26 49,26 49,26 C49,26 0.559,46 0.559,46 C0.559,46 0.559,-6 0.559,-6 C0.559,-6 49,-26 49,-26z"></path></g><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.5" d="M0 0 M0.559,46 C0.559,46 -49,26 -49,26 C-49,26 -49,-26 -49,-26 C-49,-26 0.559,-6 0.559,-6 C0.559,-6 0.559,46 0.559,46z"></path></g></g></g></svg>
+       </div>
+      </div>
+      <div class="facility-item-bottom">
+       <h5>路由</h5>
+       <p>支持hash和html5模式的router，单页或同构的Web应用通常需要它。</p>
+      </div> </a>
+    </div>
+    <div class="facility-block">
+     <a class="facility-item facility-item-unready" href="https://github.com/ecomfe/san-store" target="_blank">
+      <div class="facility-item-top facility-item-top-two">
+       <div style="width:130px;height:130px;display:inline-block;" class="bodymovin" data-movpath="/san/js/store.json">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;"><defs><clipPath id="animationMask_PAFUkCZjwY"><rect width="128" height="128" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#animationMask_PAFUkCZjwY)"><g transform="matrix(1,0,0,1,64,64)" opacity="1" style="user-select: none;"><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.2" d="M0 0 M49,-26 C49,-26 49,26 49,26 C49,26 0.559,46 0.559,46 C0.559,46 -49,26 -49,26 C-49,26 -49,-26 -49,-26 C-49,-26 0.559,-46 0.559,-46 C0.559,-46 49,-26 49,-26z"></path></g><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.2" d="M0 0 M49,26 C49,26 0.559,46 0.559,46 C0.559,46 -49,26 -49,26 C-49,26 0.559,4 0.559,4 C0.559,4 49,26 49,26z"></path></g></g><g transform="matrix(1,0,0,1,64,59)" opacity="1" style="user-select: none;"><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.59" d="M0 0 M39.559,-44.612 C39.559,-44.612 39.559,-2.429 39.559,-2.429 C39.559,-2.429 0.262,13.796 0.262,13.796 C0.262,13.796 -39.941,-2.429 -39.941,-2.429 C-39.941,-2.429 -39.941,-44.612 -39.941,-44.612 C-39.941,-44.612 0.262,-60.837 0.262,-60.837 C0.262,-60.837 39.559,-44.612 39.559,-44.612z"></path></g><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.6" d="M0 0 M0.262,13.796 C0.262,13.796 -39.941,-2.429 -39.941,-2.429 C-39.941,-2.429 -39.941,-44.612 -39.941,-44.612 C-39.941,-44.612 0.262,-28.337 0.262,-28.337 C0.262,-28.337 0.262,13.796 0.262,13.796z"></path></g><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M39.559,-44.612 C39.559,-44.612 0.262,-28.704 0.262,-28.704 C0.262,-28.704 -39.941,-44.612 -39.941,-44.612 C-39.941,-44.612 0.262,-60.837 0.262,-60.837 C0.262,-60.837 39.559,-44.612 39.559,-44.612z"></path></g></g><g transform="matrix(1,0,0,1,64,64)" opacity="1" style="user-select: none;"><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.2" d="M0 0 M49,-26 C49,-26 49,26 49,26 C49,26 0.559,46 0.559,46 C0.559,46 0.559,-6 0.559,-6 C0.559,-6 49,-26 49,-26z"></path></g><g opacity="1" transform="matrix(1,0,0,1,-0.559,9.7)"><path fill="rgb(255,255,255)" fill-opacity="0.5" d="M0 0 M0.559,46 C0.559,46 -49,26 -49,26 C-49,26 -49,-26 -49,-26 C-49,-26 0.559,-6 0.559,-6 C0.559,-6 0.559,46 0.559,46z"></path></g></g></g></svg>
+       </div>
+      </div>
+      <div class="facility-item-bottom">
+       <h5>Store</h5>
+       <p>应用状态管理套件，其理念是类似flux的单向流。</p>
+      </div> </a>
+    </div>
+    <div class="facility-block">
+     <a class="facility-item" href="https://github.com/ecomfe/san-update" target="_blank">
+      <div class="facility-item-top facility-item-top-three">
+       <div style="width:130px;height:130px;display:inline-block;" class="bodymovin" data-movpath="/san/js/update.json">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;"><defs><clipPath id="animationMask_oSZ3wqcUGY"><rect width="128" height="128" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#animationMask_oSZ3wqcUGY)"><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="0.5" d="M0 0 M46,103 C46,103 83,103 83,103 C83,103 83,111 83,111 C83,113.209 81.209,115 79,115 C79,115 50,115 50,115 C47.791,115 46,113.209 46,111 C46,111 46,103 46,103z"></path></g><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="0.7000000000000001" d="M0 0 M46,98 C46,98 83,98 83,98 C83,98 83,86 83,86 C83,86 46,86 46,86 C46,86 46,98 46,98z"></path></g><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M83.184,55.184 C83.184,55.184 83.184,81.184 83.184,81.184 C83.184,81.184 46.184,81.184 46.184,81.184 C46.184,81.184 46.184,55.184 46.184,55.184 C46.184,55.184 31,55.184 31,55.184 C28.239,55.184 26,52.945 26,50.184 C26,48.858 26.527,47.586000000000006 27.465,46.648 C27.465,46.648 60.648,13.465 60.648,13.465 C62.601000000000006,11.512 65.767,11.512 67.72,13.465 C67.72,13.465 100.903,46.648 100.903,46.648 C102.85600000000001,48.601000000000006 102.85600000000001,51.766999999999996 100.903,53.72 C99.96600000000001,54.657 98.69399999999999,55.184 97.368,55.184 C97.368,55.184 83.184,55.184 83.184,55.184z"></path></g></g></svg>
+       </div>
+      </div>
+      <div class="facility-item-bottom">
+       <h5>Update</h5>
+       <p>Immutable的对象更新库，和san-store配合进行应用状态数据更新。</p>
+      </div> </a>
+    </div>
+    <div class="facility-block">
+     <a class="facility-item" href="https://github.com/ecomfe/san-devtool/blob/master/docs/user_guide.md" target="_blank">
+      <div class="facility-item-top facility-item-top-four">
+       <div style="width:130px;height:130px;display:inline-block;" class="bodymovin" data-movpath="/san/js/dev.json">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%;"><defs><clipPath id="animationMask_hxbJ3jOV9L"><rect width="128" height="128" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#animationMask_hxbJ3jOV9L)"><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="1" d="M0 0 M78.784,92.473 C74.69000000000001,95.036 70.134,96.929 65.268,97.997 C63.758,94.36 60.172,91.802 55.988,91.802 C51.807,91.802 48.222,94.358 46.711,97.992 C41.847,96.921 37.292,95.026 33.199,92.461 C35.37,88.63 34.823,83.676 31.558,80.411 C28.296,77.148 23.347,76.6 19.517,78.765 C16.957,74.671 15.066,70.11399999999999 14,65.249 C17.622,63.73199999999999 20.167,60.154 20.167,55.981 C20.167,51.811 17.625999999999998,48.235 14.008,46.716 C15.078,41.853 16.971,37.299 19.534,33.207 C23.362,35.361000000000004 28.301,34.809 31.558,31.551 C34.815,28.293999999999997 35.368,23.356 33.215,19.529 C37.30800000000001,16.967 41.862,15.074000000000002 46.725,14.005 C48.245000000000005,17.621000000000002 51.82,20.16 55.988,20.16 C60.159,20.16 63.73500000000001,17.618 65.254,14 C70.11800000000001,15.067 74.674,16.957 78.768,19.517 C76.608,23.346 77.158,28.29 80.419,31.551 C83.682,34.814 88.631,35.361999999999995 92.461,33.196 C95.026,37.288 96.921,41.843 97.992,46.706 C94.36200000000001,48.220000000000006 91.81,51.802 91.81,55.981 C91.81,60.163000000000004 94.365,63.748 98,65.259 C96.932,70.124 95.041,74.681 92.479,78.776 C88.646,76.598 83.687,77.143 80.419,80.411 C77.14999999999999,83.68 76.605,88.64 78.784,92.473zM0 0 M56.001,76.066 C67.083,76.066 76.067,67.082 76.067,56 C76.067,44.918 67.083,35.934 56.001,35.934 C44.919,35.934 35.935,44.918 35.935,56 C35.935,67.082 44.919,76.066 56.001,76.066z"></path></g><g transform="matrix(1,0,0,1,0,0)" opacity="1" style="user-select: none;"><path fill="rgb(255,255,255)" fill-opacity="0.6" d="M0 0 M97.043,117.794 C96.926,116.033 95.827,114.408 94.081,113.702 C92.334,112.996 90.415,113.40299999999999 89.107,114.588 C87.355,113.363 85.854,111.87100000000001 84.635,110.191 C85.796,108.863 86.16900000000001,106.937 85.433,105.204 C84.697,103.47099999999999 83.053,102.401 81.291,102.313 C80.929,100.27 80.899,98.153 81.235,96.043 C82.996,95.92500000000001 84.622,94.826 85.327,93.08 C86.033,91.334 85.626,89.414 84.441,88.106 C85.666,86.35499999999999 87.15799999999999,84.85300000000001 88.838,83.635 C90.166,84.796 92.092,85.168 93.825,84.432 C95.558,83.697 96.628,82.053 96.716,80.291 C98.759,79.929 100.876,79.898 102.986,80.234 C103.104,81.99499999999999 104.203,83.621 105.949,84.327 C107.695,85.032 109.615,84.626 110.923,83.441 C112.674,84.665 114.176,86.158 115.394,87.837 C114.233,89.166 113.86099999999999,91.09100000000001 114.597,92.825 C115.333,94.558 116.976,95.628 118.739,95.715 C119.101,97.75800000000001 119.074,100.203 118.739,102.313 C116.977,102.431 115.408,103.202 114.703,104.949 C113.997,106.695 114.40299999999999,108.614 115.588,109.923 C114.36399999999999,111.674 112.872,113.176 111.192,114.394 C109.863,113.233 107.938,112.861 106.205,113.596 C104.471,114.33200000000001 103.401,115.976 103.314,117.738 C101.27099999999999,118.1 99.15400000000001,118.13 97.043,117.794zM0 0 M96.963,106.568 C101.13499999999999,108.25399999999999 105.88300000000001,106.238 107.569,102.066 C109.254,97.894 107.23899999999999,93.146 103.067,91.461 C98.895,89.775 94.14699999999999,91.791 92.461,95.962 C90.776,100.134 92.791,104.882 96.963,106.568z"></path></g></g></svg>
+       </div>
+      </div>
+      <div class="facility-item-bottom">
+       <h5>DevTool</h5>
+       <p>基于Chrome扩展的开发者工具</p>
+      </div> </a>
+    </div>
+   </div>
+
+  </section>
+  <footer id="More">
+   <div class="efe-products" id="links">
+    <p><i class="fa fa-info-circle"></i> 开源的 koacrab 来海之林团队。</p>
+   </div>
+   <div class="copyright">
+     &copy; 2018
+    <a target="_blank" href="https://www.haizlin.cn">海之林技术团队</a>
+   </div>
+  </footer>
+  <!-- JavaScript -->
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/bodymovin.min.js"></script>
+  <!-- StikyMenu -->
+  <script src="js/stickup.min.js"></script>
+  <script type="text/javascript">
+       jQuery(function($) {
+            $(document).ready( function() {
+                $('.navbar-default').stickUp();
+            });
+        });
+
+    </script>
+ </body>
+</html>
