@@ -7,3 +7,9 @@ https://sailsjs.com/
 http://keystonejs.com/zh/
 http://loopback.io/
 https://phalconphp.com/zh/
+
+## 功能
+物联网、API、APP、聊天、微服务、区块链、PWA、小程序、微信、消息推送、硬件编程、云计算、大数据、Docker、Devops、分布式、大数据、机器学习、跨平台桌面软件
+
+系统：
+后台系统
