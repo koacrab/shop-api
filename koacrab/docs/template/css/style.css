@@ -7,7 +7,6 @@ body {
     font-family: Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Hiragino Sans GB,Microsoft Yahei,Microsoft Jhenghei,sans-serif;
 }
 
-
 dl, dt, dd, ol, ul, li {
     margin: 0;
     padding: 0;
@@ -67,6 +66,17 @@ header .icon{
     /*margin-top: -0.77rem;*/
     z-index: 1;
 }
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {width: 8px;height: 8px;-webkit-appearance: none;}
+::-webkit-scrollbar-track {background-color: inherit;}
+::-webkit-scrollbar-thumb {border: 1px solid #fff;border-radius: 10px;background-color: #999;}
+::-webkit-scrollbar-thumb:hover {background-color: #808080;}
+::-webkit-scrollbar-thumb:active {background-color: #666;}
+::selection {background:#ea8b4c;color:#fff;}
+::-moz-selection {background:#ea8b4c;color:#fff;}
+::-webkit-selection {background:#ea8b4c;color:#fff;}
+
 .search-input{
     float: right;
     position: relative;
