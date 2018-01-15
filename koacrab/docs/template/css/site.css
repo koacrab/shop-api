@@ -12,16 +12,16 @@ body{
 }
 
 .overlay{
-   background:url(../images/lowpoly.jpg);
-   background-size: cover;
+   /*background:url(../images/lowpoly.jpg);*/
+   background:url(../images/texture.png);
   -webkit-animation:150s scroll infinite linear;
   -moz-animation:150s scroll infinite linear;
   -o-animation:150s scroll infinite linear;
   -ms-animation:150s scroll infinite linear;
   animation:150s scroll infinite linear;
   width:100%;
- height:560px;
- padding-top:25px;
+ height:100vh;
+ padding-top:175px;
  overflow: hidden;
  text-align: center;
  position: relative;
@@ -66,10 +66,61 @@ body{
   height: 40px;
 }
 
+.home-top{
+  height: 60px;
+  line-height: 60px;
+  background: rgba(35, 56, 66, 0.98);
+
+}
+
+.home-top p{
+  color: #fff;
+}
+
+.home-top em{
+  font-style: normal;
+  color: red;
+}
+
+.home-top .top-left{
+  float: left;
+  color: #fff;
+}
+
+.home-top .top-right{
+  float: right;
+  color: #fff;
+}
+
+.home-top p a{
+  color: #fff;
+}
 
 .logo {
     display: block;
     margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+/* .overlay::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../images/crab_bg.png) center 610px no-repeat;
+    pointer-events: none;
+} */
+
+.overlay .info{
+  margin-top: 15px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.overlay .info a{
+  color: #fff;
 }
 
 .overlay>h1{
@@ -81,18 +132,15 @@ body{
 }
 .overlay-p{
     font-weight: 100;
-    color: rgba(255 ,255 ,255, .5);
+    color: #fff;
     font-size: 20px;
+  margin-bottom: 30px;
+}
 
-}
-.overlay-p em{
-  font-style: normal;
-  color: red;
-}
 .get-start{
     background: #2EA2F8;
     color: #fff;
-    border-radius: 30px;
+    border-radius: 6px;
     display: inline-block;
     width: 222px;
     line-height: 46px;
@@ -105,7 +153,6 @@ body{
     transition-duration: .2s;
     transition-property: color,background-color;
     cursor: pointer;
-
 }
 
 .get-start:hover{
