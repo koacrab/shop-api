@@ -13,18 +13,18 @@ body{
 
 .overlay{
    /*background:url(../images/lowpoly.jpg);*/
-   background:url(../images/texture.png);
-  -webkit-animation:150s scroll infinite linear;
-  -moz-animation:150s scroll infinite linear;
-  -o-animation:150s scroll infinite linear;
-  -ms-animation:150s scroll infinite linear;
-  animation:150s scroll infinite linear;
+   background:url(../images/texture.jpg);
+    -webkit-animation:150s scroll infinite linear;
+    -moz-animation:150s scroll infinite linear;
+    -o-animation:150s scroll infinite linear;
+    -ms-animation:150s scroll infinite linear;
+    animation:150s scroll infinite linear;
   width:100%;
- height:100vh;
- padding-top:175px;
- overflow: hidden;
- text-align: center;
- position: relative;
+  height:100vh;
+  padding-top:175px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
 }
 @-webkit-keyframes scroll{
   100%{
@@ -263,8 +263,8 @@ body{
   height: 60px;
 }
 .nav-logo{
-  width: 34px;
-  margin-top: 15px;
+  height: 40px;
+  margin-top: 10px;
 }
 .navbar-default .navbar-nav>li>a{
   font-size: 14px;
