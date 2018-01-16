@@ -12,58 +12,39 @@ $(document).ready(function() {
 					}
 			}
 		});
-		
-		//scroll change nav color 
-		// window.onscroll = function () {
-  //           let scroll = document.body.scrollTop || document.documentElement.scrollTop;
-  //           let nava1 = document.getElementsByClassName('nav-a1')[0];
-            
-  //           if (scroll >= 60 && scroll < 120) {
-  //               if (!(/navscroll/.test(nava1.className))) {
-  //                   nava1.className += ' navscroll';
-  //                   debugger;
-  //               }
-  //           }
-           
-  //           else {
-  //               nava1.className = 'nav-a1';
-  //           }
-  //       };
 
+    //bodymovin control
+    var resourceCards = document.querySelectorAll('.resource-block');
+    var toolsCards = document.querySelectorAll('.tools-block');
+    var len = resourceCards.length;
+    var setBodymovin = function(cards, len){
+        while (len--) {
+            var bodymovinLayer = cards[len].getElementsByClassName('bodymovin')[0];
 
-        //bodymovin control
-        var resourceCards = document.querySelectorAll('.resource-block');
-        var facilityCards = document.querySelectorAll('.facility-block');
-        var len = resourceCards.length;
-        setBodymovin = function(cards, len){
-            while (len--) {
-                var bodymovinLayer = cards[len].getElementsByClassName('bodymovin')[0];
+            var animData = {
+                wrapper: bodymovinLayer,
+                loop: false,
+                prerender: true,
+                autoplay: false,
+                path: bodymovinLayer.getAttribute('data-movpath')
+            };
 
-                var animData = {
-                    wrapper: bodymovinLayer,
-                    loop: false,
-                    prerender: true,
-                    autoplay: false,
-                    path: bodymovinLayer.getAttribute('data-movpath')
-                };
+            anim = bodymovin.loadAnimation(animData);
 
-                anim = bodymovin.loadAnimation(animData);
+            (function(anim){
+               var card = cards[len];
+                $(card).on('mouseenter', function(){
+                  anim.play();
+                });
 
-                (function(anim){
-                   var card = cards[len];
-                    $(card).on('mouseenter', function(){
-                      anim.play();
-                    });
+                $(card).on('mouseleave', function(e){
+                  anim.stop();
+                });
 
-                    $(card).on('mouseleave', function(e){
-                      anim.stop();
-                    });
-                    
-                })(anim);
-            }
+            })(anim);
         }
-        setBodymovin(resourceCards, len);
-        setBodymovin(facilityCards, len);
+    }
 
+    setBodymovin(resourceCards, len);
+    setBodymovin(toolsCards, len);
 });
-
