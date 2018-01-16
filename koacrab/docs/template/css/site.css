@@ -327,7 +327,7 @@ body {
 
 .feature-item>h5 {
   color: #42697b;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 300;
   display: inline;
   margin-left: 8px;
@@ -336,7 +336,7 @@ body {
 .feature-item>p {
   color: #9CA7B4;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 24px;
   margin-top: 15px;
   margin-left: 4px;
