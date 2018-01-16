@@ -1,4 +1,4 @@
-﻿article .entry .gist {
+article .entry .gist {
   background: #eee;
   border: 1px solid color-border;
   margin-top: 15px;
@@ -9,20 +9,24 @@
   overflow: auto;
   color: #666;
 }
+
 article .entry .gist .gist-file {
   border: none;
   font-family: inherit;
   margin: 0;
   font-size: 0.9em;
 }
+
 article .entry .gist .gist-file .gist-data {
   background: none;
   border-bottom: none;
 }
+
 article .entry .gist .gist-file .gist-data pre {
   padding: 0 !important;
   font-family: font-mono;
 }
+
 article .entry .gist .gist-file .gist-meta {
   background: none;
   color: color-meta;
@@ -31,12 +35,15 @@ article .entry .gist .gist-file .gist-meta {
   text-shadow: 0 0 1px #fff;
   font-size: 100%;
 }
+
 article .entry .gist .gist-file .gist-meta a {
   color: color-link;
 }
+
 article .entry .gist .gist-file .gist-meta a:visited {
   color: color-link;
 }
+
 article figure.highlight {
   background: #f2f4f6;
   margin: 15px 0 0;
@@ -46,43 +53,53 @@ article figure.highlight {
   position: relative;
   font-size: 0.9em;
 }
+
 article figure.highlight figcaption {
   color: color-meta;
   margin-bottom: 5px;
   text-shadow: 0 0 1px #fff;
 }
+
 article figure.highlight figcaption a {
   position: absolute;
   right: 15px;
 }
+
 article figure.highlight pre {
   border: none;
   padding: 0;
   margin: 0;
 }
+
 article figure.highlight table {
   margin: 0;
   border-spacing: 0;
 }
+
 article figure.highlight tr {
   border: 0;
   background: none;
 }
+
 article figure.highlight .gutter {
   display: none;
 }
+
 article figure.highlight .code {
   padding: 1.2em 1.4em;
   color: #666;
   border: 0;
 }
+
 article figure.highlight .line {
   height: 20px;
 }
-article pre{
-  background-color:#f2f4f6;
-  color: #555555; 
+
+article pre {
+  background-color: #f2f4f6;
+  color: #555555;
 }
+
 article pre .comment,
 article pre .template_comment,
 article pre .diff .header,
@@ -93,6 +110,7 @@ article pre .javadoc {
   color: #93a1a1;
   font-style: italic;
 }
+
 article pre .keyword,
 article pre .winutils,
 article pre .method,
@@ -103,6 +121,7 @@ article pre .status,
 article pre .nginx .title {
   color: #859900;
 }
+
 article pre .number,
 article pre .command,
 article pre .string,
@@ -113,6 +132,7 @@ article pre .regexp,
 article pre .hexcolor {
   color: #2aa198;
 }
+
 article pre .title,
 article pre .localvars,
 article pre .chunk,
@@ -124,6 +144,7 @@ article pre .literal,
 article pre .id {
   color: #268bd2;
 }
+
 article pre .attribute,
 article pre .variable,
 article pre .lisp .body,
@@ -134,6 +155,7 @@ article pre .parent,
 article pre .haskell .type {
   color: #b58900;
 }
+
 article pre .preprocessor,
 article pre .preprocessor .keyword,
 article pre .shebang,
@@ -148,6 +170,7 @@ article pre .cdata,
 article pre .clojure .title {
   color: #cb4b16;
 }
+
 article pre .deletion {
   color: #dc322f;
-} 
+}

@@ -19,8 +19,6 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/site.css" />
-  <link rel="stylesheet" href="css/article.css" />
-  <link rel="stylesheet" href="css/code.css" />
  </head>
 
  <body id="main">
@@ -54,7 +52,7 @@
      <a href="https://coding.net/u/haizlin/p/koacrab/git" target="_blank">码市</a>
    </p>
    <p class="info">
-     <iframe src="github.html?user=haizlin&repo=koacrab&type=star&count=true&size=large" class="home-iframe"></iframe>
+     <iframe src="github.html?user=haizlin&repo=koacrab&type=star&count=true&size=large" class="home-iframe" frameborder="no" border="0"></iframe>
    </p>
   </div>
 
@@ -170,8 +168,8 @@
        <p>教程是入门的捷径，请从这里开始了解koacrab。</p>
       </div> </a>
     </div>
-    <div class="resource-block" href="#">
-     <a class="resource-item" href="practice/">
+    <div class="resource-block">
+     <a class="resource-item" href="#">
       <div class="resource-item-top resource-item-top-two">
        <div style="width:100px;height:100px;display:inline-block;" class="bodymovin">
          <embed src="svg/2-2.svg" width="100" height="100" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
@@ -282,6 +280,9 @@
   <!-- StikyMenu -->
   <script src="js/stickup.min.js"></script>
   <script type="text/javascript">
+    // 提示升级浏览器
+    (function(w){if(!("WebSocket"in w&&2===w.WebSocket.CLOSING)){var d=document.createElement("div");d.className="browsehappy";d.innerHTML='<div style="width:100%;height:100px;font-size:20px;line-height:100px;text-align:center;background-color:#E90D24;color:#fff;margin-bottom:40px;">\u672c\u7ad9\u652f\u6301\u0049\u0045\u0031\u0030\u4ee5\u4e0a\uff0c\u4f46\u4f60\u7684\u6d4f\u89c8\u5668\u5b9e\u5728<strong>\u592a\u592a\u65e7\u4e86</strong>\uff0c\u592a\u592a\u65e7\u4e86 <a target="_blank" href="http://rj.baidu.com/soft/detail/14744.html?ald" style="background-color:#31b0d5;border-color: #269abc;text-decoration: none;padding: 6px 12px;background-image: none;border: 1px solid transparent;border-radius: 4px;color:#FFEB3B;">\u7acb\u5373\u5347\u7ea7\u5427</a></div>';var f=function(){var s=document.getElementsByTagName("body")[0];if("undefined"==typeof(s)){setTimeout(f,10)}else{s.insertBefore(d,s.firstChild)}};f()}}(window));
+
        jQuery(function($) {
             $(document).ready( function() {
                 $('.navbar-default').stickUp();
