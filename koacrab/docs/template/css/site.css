@@ -624,3 +624,13 @@ footer dt{
   background: rgba(0,0,0,0.3);
   margin: 10px 0;
 }
+
+.install-code em{
+  font-style: normal;
+ -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

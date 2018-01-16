@@ -73,9 +73,9 @@ header .icon{
 ::-webkit-scrollbar-thumb {border: 1px solid #fff;border-radius: 10px;background-color: #999;}
 ::-webkit-scrollbar-thumb:hover {background-color: #808080;}
 ::-webkit-scrollbar-thumb:active {background-color: #666;}
-::selection {background:#ea8b4c;color:#fff;}
-::-moz-selection {background:#ea8b4c;color:#fff;}
-::-webkit-selection {background:#ea8b4c;color:#fff;}
+::selection {background:#2da2f8;color:#fff;}
+::-moz-selection {background:#2da2f8;color:#fff;}
+::-webkit-selection {background:#2da2f8;color:#fff;}
 
 .search-input{
     float: right;
