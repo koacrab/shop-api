@@ -77,6 +77,11 @@ header .icon{
 ::-moz-selection {background:#2da2f8;color:#fff;}
 ::-webkit-selection {background:#2da2f8;color:#fff;}
 
+
+a:focus{
+   outline:none;
+}
+
 .search-input{
     float: right;
     position: relative;
@@ -112,7 +117,6 @@ header .icon{
     color: #717e82;
     letter-spacing: 2px;
 }
-
 
 
 .github {
