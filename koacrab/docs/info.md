@@ -15,10 +15,9 @@ https://phalconphp.com/zh/
 后台系统
 
 官网：
-首页：github star, 链接
+首页：
 api文档
 
 手机版
 readme
 上传到服务端
-兼容性测试

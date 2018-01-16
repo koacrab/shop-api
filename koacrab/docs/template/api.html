@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta charset="utf-8" />
-  <link rel="shortcut icon" href="/san/img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <title>开始 | koacrab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="description" content="koacrab，是一个 MVVM 的组件框架。它体积小巧（12K），兼容性好（IE6），性能卓越，是一个可靠、可依赖的实现响应式用户界面的解决方案。 koacrab 通过声明式的类 HTML 视图模板，在支持所有原生 HTML 的语法特性外，还支持了数据到视图的绑定指令、业务开发中最常使用的分支、循环指令等，在保持良好的易用性基础上，由框架完成基于字符串的模板解析，并构建出视图层的 节点关系树，通过高性能的视图引" />
@@ -26,7 +26,7 @@
   <!-- search -->
   <link rel="stylesheet" href="css/docsearch.min.css" />
  </head>
- <body style="background: #01222d;">
+ <body>
   <div class="body-inner">
    <header>
     <a href="index.html" class="logo-s-link"> <img height="80" src="images/logo.png" class="logo-s" alt="LOGO" title="koacrab" /> </a>
@@ -35,12 +35,9 @@
      <nav class="header-content-nav">
       <div class="search-input">
        <style type="text/css">
-      /*  #san-query-input {
-            background-color: red;
-        }*/
-            #san-query-input::-webkit-input-placeholder{
-            　　color: #000 !important;
-            　　}
+          #san-query-input::-webkit-input-placeholder{
+          　　color: #000 !important;
+          　　}
         </style>
        <input type="text" id="san-query-input" placeholder="Search" class="search-query st-default-search-input" />
        <svg t="1502693727354" class="icon" style="" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1431" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
@@ -51,11 +48,11 @@
        </svg>
       </div>
       <ul>
-       <li><a class="router" href="/san/">HOME</a> </li>
-       <li><a class="router" href="/san/tutorial/start/">教程</a> </li>
-       <li><a class="router" href="/san/example/">示例</a> </li>
-       <li><a class="router" href="/san/doc/api/">API</a> </li>
-       <li><a class="github" href="https://github.com/haizlin/koacrabsan" target="_blank"> <embed src="js/github2.svg" width="20" height="20" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" /> </a> </li>
+       <li><a class="router" href="#">HOME</a> </li>
+       <li><a class="router" href="#">教程</a> </li>
+       <li><a class="router" href="#">示例</a> </li>
+       <li><a class="router" href="#">API</a> </li>
+       <li><a class="github" href="https://github.com/haizlin/koacrab" target="_blank"> <embed src="js/github2.svg" width="20" height="20" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" /> </a> </li>
        <li> </li>
       </ul>
      </nav>
@@ -79,103 +76,85 @@
        教程
       </dt>
       <dd>
-       <a href="/san/tutorial/setup/">安装</a>
+       <a href="#">安装</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/background/">背景</a>
+       <a href="#">背景</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/start/">开始</a>
+       <a href="#">开始</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/data-binding/">数据绑定</a>
+       <a href="#">数据绑定</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/data-method/">数据操作</a>
+       <a href="#">数据操作</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/data-checking/">数据校验</a>
+       <a href="#">数据校验</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/style/">样式</a>
+       <a href="#">样式</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/if/">条件</a>
+       <a href="#">条件</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/for/">循环</a>
+       <a href="#">循环</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/event/">事件处理</a>
+       <a href="#">事件处理</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/form/">表单</a>
+       <a href="#">表单</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/slot/">插槽</a>
+       <a href="#">插槽</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/transition/">过渡</a>
+       <a href="#">过渡</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/component/">组件</a>
+       <a href="#">组件</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/reverse/">组件反解</a>
+       <a href="#">组件反解</a>
       </dd>
       <dd>
-       <a href="/san/tutorial/ssr/">服务端渲染</a>
+       <a href="#">服务端渲染</a>
       </dd>
       <dt>
        了解更多
       </dt>
       <dd>
-       <a href="/san/doc/api/">组件 API</a>
+       <a href="#">组件 API</a>
       </dd>
       <dd>
-       <a href="/san/doc/main-members/">主模块 API</a>
+       <a href="#">主模块 API</a>
       </dd>
       <dd>
-       <a href="https://github.com/haizlin/koacrabsan/blob/master/doc/anode.md" target="_blank">ANode DOC</a>
+       <a href="https://github.com/haizlin/koacrab/blob/master/doc/anode.md" target="_blank">ANode DOC</a>
       </dd>
       <dd>
-       <a href="https://github.com/haizlin/koacrabsan/tree/master/dist" target="_blank">发布版本说明</a>
+       <a href="https://github.com/haizlin/koacrab/tree/master/dist" target="_blank">发布版本说明</a>
       </dd>
       <dd>
-       <a href="https://github.com/haizlin/koacrabsan/blob/master/CHANGELOG.md" target="_blank">版本更新日志</a>
-      </dd>
-      <dt>
-       周边
-      </dt>
-      <dd>
-       <a href="https://github.com/haizlin/koacrabsan-devtool/blob/master/docs/user_guide.md" target="_blank">DevTool</a>
-      </dd>
-      <dd>
-       <a href="https://ecomfe.github.io/san-mui/" target="_blank">san-mui</a>
-      </dd>
-      <dd>
-       <a href="https://github.com/haizlin/koacrabsan-router" target="_blank">san-router</a>
-      </dd>
-      <dd>
-       <a href="https://github.com/haizlin/koacrabsan-store" target="_blank">san-store</a>
-      </dd>
-      <dd>
-       <a href="https://github.com/haizlin/koacrabsan-update" target="_blank">san-update</a>
+       <a href="https://github.com/haizlin/koacrab/blob/master/CHANGELOG.md" target="_blank">版本更新日志</a>
       </dd>
       <dt>
        示例
       </dt>
       <dd>
-       <a href="https://github.com/haizlin/koacrabsan/tree/master/example/start" target="_blank">一些小示例</a>
+       <a href="https://github.com/haizlin/koacrab/tree/master/example/start" target="_blank">一些小示例</a>
       </dd>
       <dd>
-       <a href="https://github.com/haizlin/koacrabsan/tree/master/example/todos-amd" target="_blank">Todos (AMD)</a>
+       <a href="https://github.com/haizlin/koacrab/tree/master/example/todos-amd" target="_blank">Todos (AMD)</a>
       </dd>
       <dd>
-       <a href="https://github.com/haizlin/koacrabsan/tree/master/example/todos-esnext" target="_blank">Todos (ESNext)</a>
+       <a href="https://github.com/haizlin/koacrab/tree/master/example/todos-esnext" target="_blank">Todos (ESNext)</a>
       </dd>
       <dd>
-       <a href="https://github.com/haizlin/koacrabsan-store/tree/master/example/todos" target="_blank">Todos (单向流)</a>
+       <a href="https://github.com/haizlin/koacrab-store/tree/master/example/todos" target="_blank">Todos (单向流)</a>
       </dd>
      </dl>
     </aside>
@@ -183,14 +162,14 @@
      <div class="article-inner">
       <div class="article-title">
        <h1 class="article-title" itemprop="name"> 开始 </h1>
-       <a href="https://github.com/haizlin/koacrabsan-website/tree/master/source/_posts/tutorial/start.md" class="article-edit-link" title="编辑本文" target="_blank"> <embed src="js/pen.svg" width="12" height="15" style="padding-top:2px;" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" /> 编辑本文</a>
+       <a href="https://github.com/haizlin/koacrab-website/tree/master/source/_posts/tutorial/start.md" class="article-edit-link" title="编辑本文" target="_blank"> <embed src="js/pen.svg" width="12" height="15" style="padding-top:2px;" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" /> 编辑本文</a>
       </div>
       <div class="article-entry" itemprop="articleBody">
        <p>koacrab，是一个 MVVM 的组件框架。它体积小巧（12K），兼容性好（IE6），性能卓越，是一个可靠、可依赖的实现响应式用户界面的解决方案。</p>
-       <p>koacrab 通过声明式的类 HTML 视图模板，在支持所有原生 HTML 的语法特性外，还支持了数据到视图的绑定指令、业务开发中最常使用的分支、循环指令等，在保持良好的易用性基础上，由框架完成基于字符串的模板解析，并构建出视图层的 <a href="https://github.com/haizlin/koacrabsan/blob/master/doc/anode.md" target="_blank" rel="noopener">节点关系树</a>，通过高性能的视图引擎快速生成 UI 视图。koacrab 中定义的数据会被封装，使得当数据发生有效变更时通知 koacrab 组件，koacrab 组件依赖模板编译阶段生成的<a href="https://github.com/haizlin/koacrabsan/blob/master/doc/anode.md" target="_blank" rel="noopener">节点关系树</a>，确定需要变更的最小视图，进而完成视图的异步更新，保证了视图更新的高效性。</p>
+       <p>koacrab 通过声明式的类 HTML 视图模板，在支持所有原生 HTML 的语法特性外，还支持了数据到视图的绑定指令、业务开发中最常使用的分支、循环指令等，在保持良好的易用性基础上，由框架完成基于字符串的模板解析，并构建出视图层的 <a href="https://github.com/haizlin/koacrab/blob/master/doc/anode.md" target="_blank" rel="noopener">节点关系树</a>，通过高性能的视图引擎快速生成 UI 视图。koacrab 中定义的数据会被封装，使得当数据发生有效变更时通知 koacrab 组件，koacrab 组件依赖模板编译阶段生成的<a href="https://github.com/haizlin/koacrab/blob/master/doc/anode.md" target="_blank" rel="noopener">节点关系树</a>，确定需要变更的最小视图，进而完成视图的异步更新，保证了视图更新的高效性。</p>
        <p>组件是 koacrab 的基本单位，是独立的数据、逻辑、视图的封装单元。从页面角度看，组件是 HTML 元素的扩展；从功能模式角度看，组件是一个 ViewModel。koacrab 组件提供了完整的生命周期，与 WebComponent 的生命周期相符合，组件间是可嵌套的树形关系，完整的支持了组件层级、组件间的通信，方便组件间的数据流转。koacrab 的组件机制，可以有效支撑业务开发上的组件化需求。</p>
        <p>koacrab 支持<a href="https://ecomfe.github.io/san/tutorial/reverse/">组件反解</a>，以此提供<a href="https://ecomfe.github.io/san/tutorial/ssr/">服务端渲染</a>能力，可以解决纯前端渲染导致的响应用户交互时延长、SEO 问题。除此之外，koacrab 还提供了一些周边开源产品，与 koacrab 配合使用，可以帮助开发者快速搭建可维护的大型 SPA 应用。</p>
-       <p>现在，我们从一些简单的例子，开始了解 koacrab。这些例子可以从<a href="https://github.com/haizlin/koacrabsan/tree/master/example/start" target="_blank" rel="noopener">这里</a>找到。</p>
+       <p>现在，我们从一些简单的例子，开始了解 koacrab。这些例子可以从<a href="https://github.com/haizlin/koacrab/tree/master/example/start" target="_blank" rel="noopener">这里</a>找到。</p>
        <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2>
        <figure class="highlight javascript">
         <table>
@@ -253,11 +232,11 @@
   <div class="mobile-nav-dimmer"></div>
   <div class="mobile-nav">
    <ul class="mobile-nav-header">
-    <li><a href="/san/">HOME</a> </li>
-    <li><a href="/san/tutorial/start/">教程</a> </li>
-    <li><a href="/san/example/">示例</a> </li>
-    <li><a href="/san/doc/api/">API</a> </li>
-    <li><a href="https://github.com/haizlin/koacrabsan" class="github" target="_blank">Github </a></li>
+    <li><a href="#">HOME</a> </li>
+    <li><a href="#">教程</a> </li>
+    <li><a href="#">示例</a> </li>
+    <li><a href="#">API</a> </li>
+    <li><a href="https://github.com/haizlin/koacrab" class="github" target="_blank">Github </a></li>
    </ul>
    <aside class="mobile-nav-recommend">
     <dl>
@@ -265,103 +244,103 @@
       教程
      </dt>
      <dd>
-      <a href="/san/tutorial/setup/">安装</a>
+      <a href="#">安装</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/background/">背景</a>
+      <a href="#">背景</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/start/">开始</a>
+      <a href="#">开始</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/data-binding/">数据绑定</a>
+      <a href="#">数据绑定</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/data-method/">数据操作</a>
+      <a href="#">数据操作</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/data-checking/">数据校验</a>
+      <a href="#">数据校验</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/style/">样式</a>
+      <a href="#">样式</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/if/">条件</a>
+      <a href="#">条件</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/for/">循环</a>
+      <a href="#">循环</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/event/">事件处理</a>
+      <a href="#">事件处理</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/form/">表单</a>
+      <a href="#">表单</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/slot/">插槽</a>
+      <a href="#">插槽</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/transition/">过渡</a>
+      <a href="#">过渡</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/component/">组件</a>
+      <a href="#">组件</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/reverse/">组件反解</a>
+      <a href="#">组件反解</a>
      </dd>
      <dd>
-      <a href="/san/tutorial/ssr/">服务端渲染</a>
+      <a href="#">服务端渲染</a>
      </dd>
      <dt>
       了解更多
      </dt>
      <dd>
-      <a href="/san/doc/api/">组件 API</a>
+      <a href="#">组件 API</a>
      </dd>
      <dd>
-      <a href="/san/doc/main-members/">主模块 API</a>
+      <a href="#">主模块 API</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan/blob/master/doc/anode.md" target="_blank">ANode DOC</a>
+      <a href="https://github.com/haizlin/koacrab/blob/master/doc/anode.md" target="_blank">ANode DOC</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan/tree/master/dist" target="_blank">发布版本说明</a>
+      <a href="https://github.com/haizlin/koacrab/tree/master/dist" target="_blank">发布版本说明</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan/blob/master/CHANGELOG.md" target="_blank">版本更新日志</a>
+      <a href="https://github.com/haizlin/koacrab/blob/master/CHANGELOG.md" target="_blank">版本更新日志</a>
      </dd>
      <dt>
       周边
      </dt>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan-devtool/blob/master/docs/user_guide.md" target="_blank">DevTool</a>
+      <a href="https://github.com/haizlin/koacrab-devtool/blob/master/docs/user_guide.md" target="_blank">DevTool</a>
      </dd>
      <dd>
       <a href="https://ecomfe.github.io/san-mui/" target="_blank">san-mui</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan-router" target="_blank">san-router</a>
+      <a href="https://github.com/haizlin/koacrab-router" target="_blank">san-router</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan-store" target="_blank">san-store</a>
+      <a href="https://github.com/haizlin/koacrab-store" target="_blank">san-store</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan-update" target="_blank">san-update</a>
+      <a href="https://github.com/haizlin/koacrab-update" target="_blank">san-update</a>
      </dd>
      <dt>
       示例
      </dt>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan/tree/master/example/start" target="_blank">一些小示例</a>
+      <a href="https://github.com/haizlin/koacrab/tree/master/example/start" target="_blank">一些小示例</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan/tree/master/example/todos-amd" target="_blank">Todos (AMD)</a>
+      <a href="https://github.com/haizlin/koacrab/tree/master/example/todos-amd" target="_blank">Todos (AMD)</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan/tree/master/example/todos-esnext" target="_blank">Todos (ESNext)</a>
+      <a href="https://github.com/haizlin/koacrab/tree/master/example/todos-esnext" target="_blank">Todos (ESNext)</a>
      </dd>
      <dd>
-      <a href="https://github.com/haizlin/koacrabsan-store/tree/master/example/todos" target="_blank">Todos (单向流)</a>
+      <a href="https://github.com/haizlin/koacrab-store/tree/master/example/todos" target="_blank">Todos (单向流)</a>
      </dd>
     </dl>
    </aside>
