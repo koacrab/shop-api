@@ -245,12 +245,14 @@ body {
   border-color: transparent;
   border-style: solid;
 }
-/*nav*/
+
+/* nav */
 .navbar-default {
   background-color: #EEF2F6;
   display: block;
   width: 100%;
   z-index: 999;
+  border-bottom: 1px solid #fff;
 }
 
 .navbar-container {
@@ -474,8 +476,6 @@ body {
   padding-top: 10px;
   padding-bottom: 30px;
 }
-
-
 
 /*footer*/
 footer a {
