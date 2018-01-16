@@ -265,7 +265,7 @@ body {
 }
 
 .navbar-default .navbar-nav>li>a {
-  font-size: 14px;
+  font-size: 20px;
   color: rgba(48,92,113,.8);
   font-family: 'brandon-grotesque','Work Sans', sans-serif;
   transition-timing-function: ease;
