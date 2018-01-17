@@ -7,6 +7,7 @@
  *    "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
  */
 // http://patorjk.com/software/taag/#p=testall&c=c&f=Graffiti&t=KoaCrab
+
 const Koa = require('koa');
 const path = require('path');
 const fs = require('fs');
@@ -32,6 +33,8 @@ module.exports = class Application {
     // 项目运行的根路径
     this.root = process.cwd();
     this.conf = {};
+    // 版本
+    this.version = pkg.version;
   }
 
   init(port) {
@@ -42,7 +45,7 @@ module.exports = class Application {
       this.use(item(this));
     }
 
-    console.log(statics(this.root + '/theme/home/'));
+    // console.log(statics(this.root + '/theme/home/'));
     this.use(statics(this.root + '/theme/home/'));
 
     this.printChart();
