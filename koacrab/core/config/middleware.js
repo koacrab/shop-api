@@ -35,7 +35,7 @@ module.exports = {
 
   //模型
   'models': {
-    status: false,
+    status: true,
   },
 
   //body_parser

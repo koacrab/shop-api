@@ -6,13 +6,20 @@ let fs = require('fs');
 module.exports = class Index extends Base {
   constructor() {
     super('子级传递过去的参数!!!!');
+    console.log(this._index('aaaaaa'));
     this.name = 'test1111';
+    console.log(this);
   }
 
   async index() {
     let data = {
       'test': 'test....'
     };
+
+    // 获取产品列表
+
+    console.log('name===',this.name);
+    console.log('fname===',this.fname);
 
     // console.log(this);
     // this.page();
@@ -24,10 +31,9 @@ module.exports = class Index extends Base {
 
   async newsList(){
     let url = 'http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=600';
-    let test = await this.httpProxy(url);
+    let data = await this.httpProxy(url);
 
-    console.log(test);
-    console.log('newsList...');
+    this.renderJson(data);
   }
 
   test(){

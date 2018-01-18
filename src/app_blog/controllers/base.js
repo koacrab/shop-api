@@ -3,6 +3,7 @@
 class Base {
   constructor(name) {
     this.fname = name;
+    console.log(this.fname);
   }
 
   _index(name) {
