@@ -2,7 +2,11 @@
   "name": "koacrab",
   "version": "0.0.2",
   "description": "",
+<<<<<<< HEAD
   "main": "./core/index.js",
+=======
+  "main": "./core/application.js",
+>>>>>>> 68f1825a92c544bd4204f8a09acdfc24832d5524
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

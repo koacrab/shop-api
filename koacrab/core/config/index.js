@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  port: 1124,
+  port: 1866,
   // 控制器的目录名称
   controllers: 'controllers',
   models: 'models',
