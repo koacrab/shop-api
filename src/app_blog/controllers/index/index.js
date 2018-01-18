@@ -1,5 +1,6 @@
 let Base = require('../base.js');
 let markdown = require('markdown-it');
+// import fs from 'fs';
 let fs = require('fs');
 
 module.exports = class Index extends Base {
@@ -15,11 +16,18 @@ module.exports = class Index extends Base {
 
     // console.log(this);
     // this.page();
-    this.test();
-
+    // this.test();
 
     // await this.currController.getType(process.cwd());
     this.render('index/view/index.html', data);
+  }
+
+  async newsList(){
+    let url = 'http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=600';
+    let test = await this.httpProxy(url);
+
+    console.log(test);
+    console.log('newsList...');
   }
 
   test(){

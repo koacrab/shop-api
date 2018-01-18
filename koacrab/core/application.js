@@ -6,6 +6,7 @@
  *    _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
  *    "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
  */
+
 // http://patorjk.com/software/taag/#p=testall&c=c&f=Graffiti&t=KoaCrab
 const Koa = require('koa');
 const path = require('path');
@@ -13,10 +14,10 @@ const fs = require('fs');
 const debug = require('debug')('koacrab');
 const convert = require('koa-convert');
 const lodash = require('lodash');
-const config = require('../config/index.js');
+const config = require('./config/index.js');
 const pkg = require('../../package.json');
 const log = require('./log.js');
-const middleware = require('../middleware/index.js');
+const middleware = require('./middleware/index.js');
 const color = require('cli-color');
 
 const statics = require('koa-static');
@@ -28,14 +29,13 @@ module.exports = class Application {
     this.middlewares = [];
     this.koa = koacrab.koa = new Koa();
     // this.koa.proxy = true;
-    this.crab = {};
     // 项目运行的根路径
     this.root = process.cwd();
     this.conf = {};
   }
 
   init(port) {
-    // 把中间件注册到系统里
+    // 把默认的中间件注册到系统里
     middleware(this);
 
     for (let item of this.middlewares) {

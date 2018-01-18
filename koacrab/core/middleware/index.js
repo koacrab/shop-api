@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const config = require('../config/middle.js');
+const config = require('../config/middleware.js');
 
 module.exports = function(app) {
   let filePath = '';
