@@ -8,13 +8,16 @@ module.exports = class Index extends Base {
     super('子级传递过去的参数!!!!');
     console.log(this._index('aaaaaa'));
     this.name = 'test1111';
-    console.log(this);
+    this.age = 99;
+    console.log('aaaaa....');
   }
 
   async index() {
     let data = {
       'test': 'test....'
     };
+
+    console.log('this===',this)
 
     // 获取产品列表
 

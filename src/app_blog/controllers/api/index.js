@@ -6,7 +6,6 @@ module.exports = class Api {
   }
 
   index(){
-    console.log(this.a)
     // this.news.getUserInfo(6);
     this.renderText(111);
   }
