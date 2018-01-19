@@ -8,7 +8,7 @@ const config = require('../config/index.js');
 
 module.exports = function() {
   return function models(ctx, next) {
-    ctx.model = Object.assign(ctx, loadModel());
+    ctx.models = Object.assign(ctx, loadModel());
 
     return next();
   }

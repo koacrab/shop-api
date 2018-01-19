@@ -8,15 +8,16 @@ proxy.on(function(err, req, res) {
 
 var server = require('http').createServer(function(req, res) {
   var host = req.headers.host;
+  console.log(host);
   switch (host) {
-    case 'www.koacrab.com':
+    case 'www.koacrab.wl':
       proxy.web(req, res, {
-        target: 'http://localhost:3000'
+        target: 'http://127.0.0.1:1866/'
       });
       break;
-    case 'www.koacrab.com':
+    case 'koacrab.wl':
       proxy.web(req, res, {
-        target: 'http://localhost:4030'
+        target: 'http://127.0.0.1:1866/'
       });
       break;
     default:
@@ -27,4 +28,5 @@ var server = require('http').createServer(function(req, res) {
   }
 });
 
-console.log("listening on port 80") server.listen(80);
+console.log("listening on port 80");
+server.listen(80);

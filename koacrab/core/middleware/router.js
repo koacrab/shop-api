@@ -1,5 +1,5 @@
 'use strict'
-const helps = require('../utils');
+const helps = require('koacrab-utils');
 
 /**
  * 路由中间件

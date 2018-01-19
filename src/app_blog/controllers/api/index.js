@@ -2,11 +2,13 @@
 module.exports = class Api {
   constructor() {
     // this.news = new this.model.news();
-    this.a = 222;
+    this.a = 'aaaa';
   }
 
-  index(){
-    // this.news.getUserInfo(6);
-    this.renderText(111);
+  async index(){
+    var data = await new this.models.shop;
+    data.list(111);
+
+    this.renderText('测试API');
   }
 }

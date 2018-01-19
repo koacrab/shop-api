@@ -35,6 +35,8 @@ module.exports = class Application {
   }
 
   init(port) {
+    this.errors();
+
     // 把默认的中间件注册到系统里
     middleware(this);
 
@@ -53,6 +55,35 @@ module.exports = class Application {
   // 使用koa的中间件
   use(middleware) {
     this.koa.use(middleware);
+  }
+
+  errors() {
+    // 捕捉中间件错误
+    this.koa.use(async function (ctx, next) {
+        try {
+            await next();
+        } catch (err) {
+            throw err;
+        }
+    });
+
+    // 监控错误日志
+    this.koa.on('error', function (err, ctx) {
+        console.log(err);
+    });
+
+    // 捕获promise reject错误
+    process.on('unhandledRejection', function (reason, promise) {
+        console.log(reason);
+    });
+
+    // 捕获未知错误
+    process.on('uncaughtException', function (err) {
+        console.log(err);
+        if (err.message.indexOf(' EADDRINUSE ') > -1) {
+            process.exit();
+        }
+    });
   }
 
   // 运行
