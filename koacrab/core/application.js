@@ -16,7 +16,7 @@ const convert = require('koa-convert');
 const lodash = require('lodash');
 const config = require('./config/index.js');
 const pkg = require('../../package.json');
-const log = require('./log.js');
+// const log = require('./log.js');
 const middleware = require('./middleware/index.js');
 const color = require('cli-color');
 

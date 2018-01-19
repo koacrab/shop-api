@@ -1,4 +1,5 @@
 'use strict'
+const helps = require('../utils');
 
 /**
  * 路由中间件
@@ -28,6 +29,13 @@ module.exports = function() {
       parm: parm
     };
 
+    // act的第一个是为_，则是私有方法，不能直接访问
+    if(!helps.checkAct(act)){
+      console.error('不能直接访问私有方法：' + act);
+      ctx.body = '不能直接访问私有方法：' + act;
+      return;
+    }
+
     let modAndCtr = mod + '/' + ctr;
 
     let ctrs = Object.keys(ctx.controller);
@@ -42,31 +50,30 @@ module.exports = function() {
 
     if(ctrsFn.indexOf(act) === -1){
       console.error('方法' + act + '不存在，请检查');
-      ctx.body = '请求的方法不存在，请检测！！！';
+      ctx.body = '方法' + act + '不存在，请检查';
       return;
     }
 
     try {
       // 实例化控制器
       let tmp = {};
-      tmp['currController'] = new ctx.controller[modAndCtr]();
+      tmp = new ctx.controller[modAndCtr]();
 
       let obj = Object.assign(tmp, ctx);
       // console.log('obj===',obj);
 
       // 前置
       if(ctrsFn.indexOf('_before_' + act) !== -1){
-        await tmp['currController']['_before_' + act].call(obj);
+        await tmp['_before_' + act].call(obj);
       }
 
       // 正常操作
-      ctx.actFn = tmp['currController'][act];
-      console.log('=====',ctx.actFn);
+      ctx.actFn = tmp[act];
       await ctx.actFn.call(obj);
 
       // 后置
       if(ctrsFn.indexOf('_after_' + act) !== -1){
-        await tmp['currController']['_after_' + act].call(obj);
+        await tmp['_after_' + act].call(obj);
       }
     } catch (err) {
       console.error(err);

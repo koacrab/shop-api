@@ -7,9 +7,9 @@ module.exports = class Index extends Base {
   constructor() {
     super('子级传递过去的参数!!!!');
     console.log(this._index('aaaaaa'));
-    this.name = 'test1111';
+    this.name = 'wanglin';
     this.age = 99;
-    console.log('aaaaa....');
+    this.render();
   }
 
   async index() {
@@ -17,19 +17,13 @@ module.exports = class Index extends Base {
       'test': 'test....'
     };
 
-    console.log('this===',this)
-
     // 获取产品列表
-
-    console.log('name===',this.name);
-    console.log('fname===',this.fname);
-
-    // console.log(this);
-    // this.page();
-    // this.test();
-
     // await this.currController.getType(process.cwd());
     this.render('index/view/index.html', data);
+  }
+
+  render(){
+    console.log('内部的render方法');
   }
 
   async newsList(){
