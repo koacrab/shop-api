@@ -38,6 +38,11 @@ module.exports = {
     status: true,
   },
 
+  //services
+  'services': {
+    status: true,
+  },
+
   //body_parser
   'body_parser': {
     status: false,

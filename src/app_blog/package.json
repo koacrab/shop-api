@@ -1,8 +1,9 @@
 {
   "devDependencies": {
-    "markdown-it": "^8.4.0"
+    "markdown-it": "^8.4.0",
+    "mongoose": "^5.0.1"
   },
   "dependencies": {
-    "mongodb": "^3.0.1"
+    "mongodb": "^5.0.1"
   }
 }
