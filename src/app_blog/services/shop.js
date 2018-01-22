@@ -18,4 +18,12 @@ module.exports = class Shop {
   list(info = {}) {
     return shopModel.find(info);
   }
+
+  remove(query = {}){
+    return shopModel.remove(query);
+  }
+
+  findOne(info = {}){
+
+  }
 };

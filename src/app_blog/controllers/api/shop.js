@@ -67,20 +67,17 @@ module.exports = class Api {
    * [delete description]
    * @return {[type]} [description]
    */
-  async delete(){
+  async remove(){
     let info = {
-      goods_name: 'haizlin111',
-      age: this.age++,
-      keywords: '这是关键词',
-      description: '这是描述',
+      goods_name: 'haizlin111'
     }
 
-    let shop = new Shop();
+    let shop = new this.services.shop();
 
-    let result = await shop.add(info);
+    let result = await shop.remove(info);
 
     if(result){
-      this.renderText('添加成功');
+      this.renderText('移除成功');
     }
   }
 
