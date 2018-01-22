@@ -44,4 +44,8 @@ module.exports = class News {
 
     return '你提交的用户id为：' + userid;
   }
+
+  test(){
+    return 'test...';
+  }
 };

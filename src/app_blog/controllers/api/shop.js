@@ -1,12 +1,6 @@
-let Shop = require('../../services/shop');
-
 module.exports = class Api {
   constructor() {
-    this.news = this.models;
-    console.log(this.news);
-    return;
-    this.a = 'aaaa';
-    this.age = 18;
+    // this.shop = new this.services.shop();
   }
 
   index(){
@@ -22,7 +16,7 @@ module.exports = class Api {
       goods_name: 'haizlin111'
     }
 
-    let shop = new Shop();
+    let shop = new this.services.shop();
 
     let result = await shop.list(query);
 
@@ -40,8 +34,7 @@ module.exports = class Api {
       description: '这是描述',
     }
 
-    let shop = new Shop();
-
+    let shop = new this.services.shop();
     let result = await shop.add(info);
 
     if(result){
