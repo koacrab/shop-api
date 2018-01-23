@@ -18,6 +18,11 @@ module.exports = {
     }
   },
 
+  //bodyParser
+  'bodyParser': {
+    status: true,
+  },
+
   //代理
   'proxy': {
     status: true,
@@ -35,11 +40,6 @@ module.exports = {
 
   //services
   'services': {
-    status: true,
-  },
-
-  //bodyParser
-  'bodyParser': {
     status: true,
   },
 

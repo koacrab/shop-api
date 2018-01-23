@@ -1,4 +1,4 @@
-module.exports = class Shop {
+module.exports = class Admin {
   constructor() {
     // this.shop = new this.services.shop();
   }
@@ -16,12 +16,12 @@ module.exports = class Shop {
     let limit = info.limit || 10;
 
     let query = {
-      goods_name: 'wanglin'
+      email: '80285586@qq.com'
     }
 
-    let shop = new this.services.shop();
+    let admin = new this.services.admin();
 
-    let result = await shop.list(query, limit);
+    let result = await admin.list(query, limit);
 
     this.renderJson(result);
   }
@@ -32,8 +32,8 @@ module.exports = class Shop {
   async add(){
     let info = this.request.fields || {};
 
-    let shop = new this.services.shop();
-    let result = await shop.add(info);
+    let admin = new this.services.admin();
+    let result = await admin.add(info);
 
     if(result){
       this.renderJson({code: 1, message: '添加成功'});
@@ -52,9 +52,9 @@ module.exports = class Shop {
       description: '这是描述',
     }
 
-    let shop = new Shop();
+    let admin = new Shop();
 
-    let result = await shop.add(info);
+    let result = await admin.add(info);
 
     if(result){
       this.renderText('添加成功');
@@ -70,9 +70,9 @@ module.exports = class Shop {
       goods_name: 'haizlin111'
     }
 
-    let shop = new this.services.shop();
+    let admin = new this.services.admin();
 
-    let result = await shop.remove(info);
+    let result = await admin.remove(info);
 
     if(result){
       this.renderText('移除成功');
@@ -91,9 +91,9 @@ module.exports = class Shop {
       description: '这是描述',
     }
 
-    let shop = new Shop();
+    let admin = new Shop();
 
-    let result = await shop.add(info);
+    let result = await admin.add(info);
 
     if(result){
       this.renderText('添加成功');

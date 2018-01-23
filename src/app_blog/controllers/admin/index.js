@@ -1,5 +1,4 @@
 let Base = require('../base.js');
-let news = new (require('../../models/news.js'));
 
 module.exports = class Index extends Base {
   constructor() {

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-let shopModel = require('../models/shop');
+let adminModel = require('../models/admin');
 
 const DB_URL = 'mongodb://localhost:27017/vueShop';
 const DB_NAME = 'vueShop';
@@ -10,17 +10,17 @@ module.exports = class Shop {
   }
 
   add(info = {}){
-    let shop = new shopModel(info);
+    let shop = new adminModel(info);
 
     return shop.save();
   }
 
   list(info = {}, limit = 10) {
-    return shopModel.find(info).limit(Number(limit));
+    return adminModel.find(info).limit(Number(limit));
   }
 
   remove(query = {}){
-    return shopModel.remove(query);
+    return adminModel.remove(query);
   }
 
   findOne(info = {}){

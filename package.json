@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "boom": "^6.0.0",
+    "koa-better-body": "^3.0.4",
     "markdown-it": "^8.4.0",
     "raven": "^2.2.1",
     "request-promise": "^4.2.2"

@@ -14,6 +14,7 @@ let ShopSchema = new mongoose.Schema({
   goods_img: String,
   goods_desc: String,
   goods_number: Number,
+  price: String,
   is_best: {
     type: Boolean,
     default: false
