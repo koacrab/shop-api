@@ -9,11 +9,6 @@ module.exports = {
     status: false,
   },
 
-  //body
-  'body': {
-    status: false,
-  },
-
   //static
   'static': {
     status: false,
@@ -43,9 +38,9 @@ module.exports = {
     status: true,
   },
 
-  //body_parser
-  'body_parser': {
-    status: false,
+  //bodyParser
+  'bodyParser': {
+    status: true,
   },
 
   //view

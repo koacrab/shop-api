@@ -3,7 +3,7 @@ const mysql = require('mysql');
 
 module.exports = class News {
   constructor() {
-    console.log('实例化模块……');
+
   }
 
   getUserInfo(userid) {

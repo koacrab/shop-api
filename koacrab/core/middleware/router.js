@@ -60,7 +60,6 @@ module.exports = function() {
       tmp = new ctx.controller[modAndCtr]();
 
       let obj = Object.assign(tmp, ctx);
-      // console.log('obj===',obj);
 
       // 前置
       if(ctrsFn.indexOf('_before_' + act) !== -1){

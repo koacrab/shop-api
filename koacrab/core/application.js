@@ -44,7 +44,6 @@ module.exports = class Application {
       this.use(item(this));
     }
 
-    console.log(statics(this.root + '/theme/home/'));
     this.use(statics(this.root + '/theme/home/'));
 
     this.printChart();

@@ -27,6 +27,15 @@ module.exports = class Api {
    * [add description]
    */
   async add(){
+    console.log(this.req.body);
+    /*let postdata = "";
+        this.req.addListener("data", (data) => {
+          postdata += data
+        })
+        this.req.addListener("end", function() {
+          console.log(postdata);
+        });*/
+
     let info = {
       goods_name: 'haizlin111',
       age: this.age++,
