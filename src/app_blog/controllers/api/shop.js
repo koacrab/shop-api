@@ -16,7 +16,7 @@ module.exports = class Shop {
     let limit = info.limit || 10;
 
     let query = {
-      goods_name: 'wanglin'
+
     }
 
     let shop = new this.services.shop();
@@ -24,6 +24,26 @@ module.exports = class Shop {
     let result = await shop.list(query, limit);
 
     this.renderJson(result);
+  }
+
+  /**
+   * 商品详情
+   * @return {[type]} [description]
+   */
+  async detail(){
+    let info = this.request.query || {};
+    let id = info.id || '';
+
+    let query = {
+      _id: id
+    }
+
+    let shop = new this.services.shop();
+    let result = await shop.findOne(query);
+
+    if(result){
+      this.renderJson({code: 1, msg: '', data: result});
+    }
   }
 
   /**
@@ -36,7 +56,7 @@ module.exports = class Shop {
     let result = await shop.add(info);
 
     if(result){
-      this.renderJson({code: 1, message: '添加成功'});
+      this.renderJson({code: 1, msg: '添加成功'});
     }
   }
 
@@ -57,7 +77,7 @@ module.exports = class Shop {
     let result = await shop.add(info);
 
     if(result){
-      this.renderText('添加成功');
+      this.renderJson({code: 1, msg: '更新成功'});
     }
   }
 
@@ -75,28 +95,85 @@ module.exports = class Shop {
     let result = await shop.remove(info);
 
     if(result){
-      this.renderText('移除成功');
+      this.renderJson({code: 1, msg: '移除成功'});
     }
   }
 
   /**
-   * 商品详情
+   * 搜索
    * @return {[type]} [description]
    */
-  async detail(){
-    let info = {
-      goods_name: 'haizlin111',
-      age: this.age++,
-      keywords: '这是关键词',
-      description: '这是描述',
+  async search(){
+    let info = this.request.query || {};
+    let limit = info.limit || 10;
+    let key = info.key || '';
+
+    if(key === ''){
+      this.renderJson({code:0, msg:'请输入关键词进行搜索'});
+      return;
     }
 
-    let shop = new Shop();
-
-    let result = await shop.add(info);
-
-    if(result){
-      this.renderText('添加成功');
+    let reg = new RegExp(key, 'i');
+    let query = {
+      goods_name: reg
     }
+
+    let shop = new this.services.shop();
+
+    let result = await shop.list(query, limit);
+
+    this.renderJson(result);
+  }
+
+  /**
+   * 添加分类
+   * @return {[type]} [description]
+   */
+  async typeAdd(){
+    let info = this.request.query || {};
+    let limit = info.limit || 10;
+    let key = info.key || '';
+
+    if(key === ''){
+      this.renderJson({code:0, msg:'请输入关键词进行搜索'});
+      return;
+    }
+
+    let reg = new RegExp(key, 'i');
+    let query = {
+      goods_name: reg
+    }
+
+    let shop = new this.services.shop();
+
+    let result = await shop.list(query, limit);
+
+    this.renderJson(result);
+  }
+
+  /**
+   * 分类列表
+   * @return {[type]} [description]
+   */
+  async typeList(){
+    let info = this.request.query || {};
+    let limit = info.limit || 10;
+    let key = info.key || '';
+
+    if(key === ''){
+      this.renderJson({code:0, msg:'请输入关键词进行搜索'});
+      return;
+    }
+
+    let reg = new RegExp(key, 'i');
+    let query = {
+      goods_name: reg
+    }
+
+    let shop = new this.services.shop();
+
+    let result = await shop.list(query, limit);
+
+    this.renderJson(result);
   }
 }

@@ -9,21 +9,29 @@ module.exports = class Shop {
     mongoose.connect(DB_URL);
   }
 
+  count(){
+
+  }
+
   add(info = {}){
     let shop = new shopModel(info);
 
     return shop.save();
   }
 
-  list(info = {}, limit = 10) {
-    return shopModel.find(info).limit(Number(limit));
+  list(query = {}, limit = 10) {
+    return shopModel.find(query).limit(Number(limit));
   }
 
   remove(query = {}){
     return shopModel.remove(query);
   }
 
-  findOne(info = {}){
+  find(query = {}){
 
+  }
+
+  findOne(query = {}) {
+    return shopModel.findOne(query);
   }
 };

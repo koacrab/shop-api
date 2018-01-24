@@ -9,7 +9,6 @@ let ShopSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-
   cat_id: String,
   goods_img: String,
   goods_desc: String,
@@ -35,6 +34,7 @@ let ShopSchema = new mongoose.Schema({
   keywords: String,
   // 描述
   description: String,
+  content: String,
 });
 
 module.exports = mongoose.model('Shop', ShopSchema);
