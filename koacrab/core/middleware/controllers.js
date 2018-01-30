@@ -4,7 +4,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const utils = require('koacrab-utils');
+const utils = require('../utils');
 const config = require('../config/index.js');
 
 module.exports = function() {

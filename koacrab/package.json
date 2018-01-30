@@ -29,6 +29,22 @@
   "devDependencies": {
     "koa": "^2.3.0",
     "mysql": "^2.14.1",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "cli-color": "^1.2.0",
+    "glob": "^7.1.2",
+    "koa-bodyparser": "^4.2.0",
+    "koa-static": "^4.0.1",
+    "koa-static-cache": "^5.1.1",
+    "koa-views": "^6.1.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^5.0.1",
+    "mongose": "0.0.2-security",
+    "mysql": "^2.14.1",
+    "nunjucks": "^3.0.1",
+    "request": "^2.83.0",
+    "boom": "^6.0.0",
+    "koa-better-body": "^3.0.4",
+    "raven": "^2.2.1",
+    "request-promise": "^4.2.2"
   }
 }
