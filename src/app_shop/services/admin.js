@@ -4,7 +4,7 @@ let adminModel = require('../models/admin');
 const DB_URL = 'mongodb://localhost:27017/vueShop';
 const DB_NAME = 'vueShop';
 
-module.exports = class Shop {
+module.exports = class Admin {
   constructor() {
     mongoose.connect(DB_URL);
   }

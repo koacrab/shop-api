@@ -1,5 +1,5 @@
 let Base = require('../base.js');
-let markdown = require('markdown-it');
+// let markdown = require('markdown-it');
 // import fs from 'fs';
 let fs = require('fs');
 
