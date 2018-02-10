@@ -4,11 +4,11 @@ module.exports = class Weixin {
   }
 
   index(){
-    this.renderText('获取用户接口首页');
+    this.renderText('获取微信小程序接口首页');
   }
 
   // 发布活动
-  async activity(){
+  async activityAdd(){
     let info = this.request.fields || {};
 
     let weixin = new this.services.weixin();
