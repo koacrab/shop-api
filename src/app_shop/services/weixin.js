@@ -37,17 +37,8 @@ module.exports = class Weixin {
     return infos;
   }
 
-
   async activityList(info = {}, limit = 10) {
     return WeixinSchema.activity.find(info).limit(Number(limit));
-  }
-
-  remove(query = {}){
-    return WeixinSchema.activity.remove(query);
-  }
-
-  checkUser(query = {}){
-
   }
 
   async login(query = {}){
@@ -69,7 +60,21 @@ module.exports = class Weixin {
     }
   }
 
-  async findOne(info = {}){
-    return await WeixinSchema.activity.findOne(info);
+  async activityEnroll(query = {}){
+    let status = await WeixinSchema.enroll.findOne(query);
+
+    if(status){
+      return {
+        code:200,
+        msg:'已经报过了',
+        data: []
+      };
+    }else{
+      let enroll = new WeixinSchema.enroll(query);
+      let enrollInfo = enroll.save();
+
+      return enrollInfo;
+    }
   }
+
 };

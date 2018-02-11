@@ -55,7 +55,13 @@ module.exports = class Weixin {
 
   // 活动报名
   async activityEnroll(){
+    let query = this.request.query || {};
 
+    let weixin = new this.services.weixin();
+
+    let result = await weixin.activityEnroll(query);
+
+    this.renderJson(result);
   }
 
   /**
