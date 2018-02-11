@@ -5,7 +5,10 @@ const mongoose = require('mongoose');
  */
 let ActivitySchema = new mongoose.Schema({
   openid: String,
-  addTime: Date,
+  addTime: {
+    type: Date,
+    default: Date.now
+  },
   subject: String,
   startDate: String,
   startTime: String,
@@ -26,7 +29,10 @@ let ActivitySchema = new mongoose.Schema({
  * 用户模型
  */
 let UserSchema = new mongoose.Schema({
-  addTime: Date,
+  addTime: {
+    type: Date,
+    default: Date.now
+  },
   openid: String,
   scene: String, //从哪里过来的，场景值
   nickName: String, //用户昵称
@@ -42,7 +48,10 @@ let UserSchema = new mongoose.Schema({
  * 用户报名模型
  */
 let EnrollSchema = new mongoose.Schema({
-  addTime: Date,
+  addTime: {
+    type: Date,
+    default: Date.now
+  },
   activityId: String,
   status: {
     type: Number,
