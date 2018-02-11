@@ -18,7 +18,7 @@ module.exports = class Weixin {
         data: []
       }
     }else{
-      let user = new WeixinSchema(info);
+      let user = new WeixinSchema.activity(info);
       let userInfo = user.save();
 
       return userInfo;
@@ -33,11 +33,11 @@ module.exports = class Weixin {
 
 
   list(info = {}, limit = 10) {
-    return WeixinSchema.find(info).limit(Number(limit));
+    return WeixinSchema.activity.find(info).limit(Number(limit));
   }
 
   remove(query = {}){
-    return WeixinSchema.remove(query);
+    return WeixinSchema.activity.remove(query);
   }
 
   checkUser(query = {}){
@@ -54,15 +54,14 @@ module.exports = class Weixin {
         data: []
       };
     }else{
-      return {
-        code:0,
-        msg:'登录失败',
-        data: []
-      };
+      let user = new WeixinSchema.user(query);
+      let userInfo = user.save();
+
+      return userInfo;
     }
   }
 
   async findOne(info = {}){
-    return await WeixinSchema.findOne(info);
+    return await WeixinSchema.activity.findOne(info);
   }
 };

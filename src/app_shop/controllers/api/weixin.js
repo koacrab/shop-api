@@ -54,13 +54,20 @@ module.exports = class Weixin {
   }
 
   /**
-   * 登录授权
+   * 用户登录时授权
    * @return {[type]} [description]
    */
   async login(){
     let info = this.request.fields || {};
-    let content = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${info.appid}&secret=${info.secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
 
-    this.renderJson({status:'获取成功', data: content});
+    let authInfo = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${info.appid}&secret=${info.secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
+    console.log(authInfo);
+
+    let weixin = new this.services.weixin();
+    let result = await weixin.login(authInfo);
+    console.log(result);
+
+
+    this.renderJson({status:'获取成功', data: authInfo});
   }
 }
