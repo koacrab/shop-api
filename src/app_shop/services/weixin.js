@@ -45,7 +45,8 @@ module.exports = class Weixin {
   }
 
   async login(query = {}){
-    let status = this.findOne(query);
+    let status = await WeixinSchema.user.findOne(query);
+    console.log('状态',status);
 
     if(status){
       return {
@@ -56,6 +57,7 @@ module.exports = class Weixin {
     }else{
       let user = new WeixinSchema.user(query);
       let userInfo = user.save();
+      console.log(userInfo);
 
       return userInfo;
     }
