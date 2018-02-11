@@ -9,11 +9,16 @@ module.exports = class Weixin {
 
   // 发布活动
   async activityAdd(){
-    let info = this.request.fields || {};
+    let fields = this.request.fields || {};
+    let query = this.request.query || {};
+
+    if(query.id){
+      fields._id = query.id;
+    }
 
     let weixin = new this.services.weixin();
 
-    let result = await weixin.add(info);
+    let result = await weixin.activityAdd(fields);
 
     this.renderJson(result);
   }
@@ -28,7 +33,7 @@ module.exports = class Weixin {
 
     let weixin = new this.services.weixin();
 
-    let result = await weixin.info(query);
+    let result = await weixin.activityInfo(query);
 
     this.renderJson(result);
   }
@@ -38,12 +43,12 @@ module.exports = class Weixin {
     let info = this.request.query || {};
 
     let query = {
-      openId: info.openId
+      openid: info.openid
     }
 
     let weixin = new this.services.weixin();
 
-    let result = await weixin.list(query);
+    let result = await weixin.activityList(query);
 
     this.renderJson(result);
   }

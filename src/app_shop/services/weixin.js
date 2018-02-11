@@ -8,8 +8,8 @@ module.exports = class Weixin {
     mongoose.connect(DB_URL);
   }
 
-  async add(info = {}){
-    let status = await this.findOne(info);
+  async activityAdd(info = {}){
+    let status = await WeixinSchema.activity.findOne(info);
 
     if(status){
       return {
@@ -17,6 +17,12 @@ module.exports = class Weixin {
         msg: '此活动已存在',
         data: []
       }
+    }else if(info._id){
+      let user = new WeixinSchema.activity();
+
+      let userInfo = user.update({_id: info.id});
+
+      return userInfo;
     }else{
       let user = new WeixinSchema.activity(info);
       let userInfo = user.save();
@@ -25,14 +31,14 @@ module.exports = class Weixin {
     }
   }
 
-  async info(info = {}){
-    let infos = await this.findOne(info);
+  async activityInfo(info = {}){
+    let infos = await WeixinSchema.activity.findOne(info);
     console.log(infos);
     return infos;
   }
 
 
-  list(info = {}, limit = 10) {
+  async activityList(info = {}, limit = 10) {
     return WeixinSchema.activity.find(info).limit(Number(limit));
   }
 
