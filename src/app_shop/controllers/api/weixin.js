@@ -61,12 +61,10 @@ module.exports = class Weixin {
     let info = this.request.fields || {};
 
     let authInfo = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${info.appid}&secret=${info.secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
-    console.log(authInfo);
+    authInfo = JSON.parse(authInfo);
 
     let weixin = new this.services.weixin();
     let result = await weixin.login(authInfo);
-    console.log(result);
-
 
     this.renderJson({status:'获取成功', data: authInfo});
   }
