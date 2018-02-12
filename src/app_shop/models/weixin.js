@@ -23,6 +23,10 @@ let ActivitySchema = new mongoose.Schema({
   },
   tel: String,
   remark: String,
+  status:{
+    type: Number,
+    default: 0 // 活动状态，0报名中，1报名结束，2活动截止报名，3活动结束，4活动取消
+  }
 });
 
 /**

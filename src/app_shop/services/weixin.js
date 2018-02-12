@@ -83,4 +83,8 @@ module.exports = class Weixin {
     }
   }
 
+  async enrollList(info = {}, limit = 10) {
+    return WeixinSchema.enroll.find(info).limit(Number(limit));
+  }
+
 };
