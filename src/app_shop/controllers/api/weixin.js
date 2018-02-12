@@ -12,7 +12,7 @@ module.exports = class Weixin {
     let fields = this.request.fields || {};
     let query = this.request.query || {};
 
-    if(query.id){
+    if(query.id && query.id !== ''){
       fields._id = query.id;
     }
 
