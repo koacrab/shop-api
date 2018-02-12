@@ -9,25 +9,32 @@ module.exports = class Weixin {
   }
 
   async activityAdd(info = {}){
-    let status = await WeixinSchema.activity.findOne(info);
+    if (info._id && !info._id.match(/^[0-9a-fA-F]{24}$/)) {
+      return {code:0, msg: 'ID不合法'};
+    }
 
-    if(status){
-      return {
-        code: 0,
-        msg: '此活动已存在',
-        data: []
-      }
-    }else if(info._id){
-      let user = new WeixinSchema.activity();
+    if(info._id){
+      let activity = WeixinSchema.activity;
 
-      let userInfo = user.update({_id: info._id});
+      let activityInfo = activity.update({_id: info._id},{$set: info}, function(err){
+        console.log(err)
+      });
 
-      return userInfo;
+      return activityInfo;
     }else{
-      let user = new WeixinSchema.activity(info);
-      let userInfo = user.save();
+      let status = await WeixinSchema.activity.findOne(info);
+      if(status){
+        return {
+          code: 0,
+          msg: '此活动已存在',
+          data: []
+        }
+      }
 
-      return userInfo;
+      let activity = new WeixinSchema.activity(info);
+      let activityInfo = activity.save();
+
+      return activityInfo;
     }
   }
 
