@@ -20,7 +20,7 @@ module.exports = class Weixin {
     }else if(info._id){
       let user = new WeixinSchema.activity();
 
-      let userInfo = user.update({_id: info.id});
+      let userInfo = user.update({_id: info._id});
 
       return userInfo;
     }else{
@@ -33,7 +33,6 @@ module.exports = class Weixin {
 
   async activityInfo(info = {}){
     let infos = await WeixinSchema.activity.findOne(info);
-    console.log(infos);
     return infos;
   }
 
