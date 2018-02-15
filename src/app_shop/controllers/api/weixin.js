@@ -1,3 +1,5 @@
+let WXBizDataCrypt = require('../../libs/WXBizDataCrypt');
+
 module.exports = class Weixin {
   constructor() {
     // this.shop = new this.services.shop();
@@ -93,5 +95,23 @@ module.exports = class Weixin {
     let result = await weixin.login(authInfo);
 
     this.renderJson({status:'获取成功', data: authInfo});
+  }
+
+  // 解密
+  async jiemi(){
+    const appId = 'wx99159edbba6cbcd3';
+    let info = this.request.fields || {};
+
+    let sessionKey = info.sessionKey || '';
+    let iv = info.iv || '';
+    let encryptedData = info.encryptedData || '';
+
+    try{
+      let pc = new WXBizDataCrypt(appId, sessionKey);
+      let data = pc.decryptData(encryptedData , iv);
+      this.renderJson({status:'解密成功', data: data});
+    }catch(err){
+      this.renderJson({status:'解密失败', data: null});
+    }
   }
 }

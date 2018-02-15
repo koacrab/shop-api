@@ -67,7 +67,7 @@ module.exports = class Weixin {
   }
 
   async activityEnroll(query = {}){
-    let status = await WeixinSchema.enroll.findOne(query);
+    let status = WeixinSchema.enroll.findOne(query);
 
     if(status){
       return {
@@ -84,7 +84,32 @@ module.exports = class Weixin {
   }
 
   async enrollList(info = {}, limit = 10) {
-    return WeixinSchema.enroll.find(info).limit(Number(limit));
+    // return WeixinSchema.enroll.find(info).limit(Number(limit));
+    // 连表查询方法
+    /*WeixinSchema.enroll.statics = {
+        findActivityInfoByEnrollId:function(enrollId, callback){
+                return this
+                    .findOne({_id : enrollId}).populate('activityId')  // 关联查询
+                    .exec(callback)
+            }
+    }
+
+    WeixinSchema.enroll.findActivityInfoByEnrollId(info.openid, function (err, student){
+        if(err) console.log(err);
+        console.log(student);
+        //通过studentID查询到对应的学生对象，并通过关联属性clazzID获取到对应classID的班级对象，
+        通过对象的clazzName属性返回班级名称
+    })*/
+
+    WeixinSchema.enroll.
+      findOne(info).
+      populate('activityId').
+      exec(function (err, res) {
+        if (err) return handleError(err);
+        console.log(res);
+        // prints "The author is Ian Fleming"
+    });
+
   }
 
 };
