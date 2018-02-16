@@ -87,9 +87,16 @@ module.exports = class Weixin {
    */
   async login(){
     let info = this.request.fields || {};
+    let query = this.request.query || {};
+    let authInfo = {};
 
-    let authInfo = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${info.appid}&secret=${info.secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
-    authInfo = JSON.parse(authInfo);
+    if(query.openid){
+      authInfo = info;
+      authInfo.openid = query.openid;
+    }else{
+      authInfo = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${info.appid}&secret=${info.secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
+      authInfo = JSON.parse(authInfo);
+    }
 
     let weixin = new this.services.weixin();
     let result = await weixin.login(authInfo);

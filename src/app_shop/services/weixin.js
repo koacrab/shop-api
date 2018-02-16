@@ -49,7 +49,6 @@ module.exports = class Weixin {
 
   async login(query = {}){
     let status = await WeixinSchema.user.findOne({openid: query.openid});
-    console.log('状态',status);
 
     if(status){
       return {
