@@ -53,7 +53,7 @@ module.exports = class Weixin {
     if(status){
       let user = WeixinSchema.user;
 
-      let userInfo = user.update({openid: info.openid},{$set: info}, function(err){
+      let userInfo = user.update({openid: query.openid},{$set: query}, function(err){
         console.log(err)
       });
 
