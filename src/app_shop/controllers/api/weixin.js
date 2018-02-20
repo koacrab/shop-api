@@ -90,7 +90,7 @@ module.exports = class Weixin {
     let query = this.request.query || {};
     let authInfo = {};
 
-    if(query.openid){
+    if(query.openid && query.openid !== ''){
       authInfo = info;
       authInfo.openid = query.openid;
     }else{
@@ -101,7 +101,7 @@ module.exports = class Weixin {
     let weixin = new this.services.weixin();
     let result = await weixin.login(authInfo);
 
-    this.renderJson({status:'获取成功', data: authInfo});
+    this.renderJson({data: authInfo});
   }
 
   // 解密
