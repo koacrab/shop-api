@@ -51,11 +51,13 @@ module.exports = class Weixin {
     let status = await WeixinSchema.user.findOne({openid: query.openid});
 
     if(status){
-      return {
-        code:200,
-        msg:'登录成功',
-        data: []
-      };
+      let user = WeixinSchema.user;
+
+      let userInfo = user.update({openid: info.openid},{$set: info}, function(err){
+        console.log(err)
+      });
+
+      return userInfo;
     }else{
       let user = new WeixinSchema.user(query);
       let userInfo = user.save();
