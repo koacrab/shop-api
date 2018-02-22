@@ -63,6 +63,10 @@ module.exports = class Weixin {
   }
 
   async activityList(info = {}, limit = 10) {
+    if (info.userid && !info.userid.match(/^[0-9a-fA-F]{24}$/)) {
+      return {code:0, msg: 'userid不合法'};
+    }
+
     return WeixinSchema.activity.find(info).limit(Number(limit));
   }
 
@@ -86,8 +90,12 @@ module.exports = class Weixin {
     }
   }
 
-  async activityEnroll(query = {}){
-    let status = await WeixinSchema.enroll.findOne(query);
+  async activityEnroll(info = {}){
+    if (info.userid && !info.userid.match(/^[0-9a-fA-F]{24}$/)) {
+      return {code:0, msg: 'userid不合法'};
+    }
+
+    let status = await WeixinSchema.enroll.findOne(info);
 
     if(status){
       return {
@@ -96,7 +104,7 @@ module.exports = class Weixin {
         data: []
       };
     }else{
-      let enroll = new WeixinSchema.enroll(query);
+      let enroll = new WeixinSchema.enroll(info);
       let enrollInfo = enroll.save();
 
       return enrollInfo;
