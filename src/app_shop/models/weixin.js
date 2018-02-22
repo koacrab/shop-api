@@ -70,7 +70,7 @@ let EnrollSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
-  openid: {
+  user: {
     type : mongoose.Schema.ObjectId, //mongoose.Schema.Types.ObjectId
     ref : 'user'    // user的Model名
   },

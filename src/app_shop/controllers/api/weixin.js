@@ -86,6 +86,9 @@ module.exports = class Weixin {
    * @return {[type]} [description]
    */
   async login(){
+    let appid = 'wx99159edbba6cbcd3';
+    let secret = '53b312284ce0a40256f6cb5028995c62';
+
     let info = this.request.fields || {};
     let query = this.request.query || {};
     let authInfo = {};
@@ -94,7 +97,7 @@ module.exports = class Weixin {
       authInfo = info;
       authInfo.openid = query.openid;
     }else{
-      authInfo = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${info.appid}&secret=${info.secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
+      authInfo = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${appid}&secret=${secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
       authInfo = JSON.parse(authInfo);
     }
 
@@ -106,7 +109,7 @@ module.exports = class Weixin {
 
   // 解密
   async jiemi(){
-    const appId = 'wx99159edbba6cbcd3';
+    const appid = 'wx99159edbba6cbcd3';
     let info = this.request.fields || {};
 
     let sessionKey = info.sessionKey || '';
@@ -114,7 +117,7 @@ module.exports = class Weixin {
     let encryptedData = info.encryptedData || '';
 
     try{
-      let pc = new WXBizDataCrypt(appId, sessionKey);
+      let pc = new WXBizDataCrypt(appid, sessionKey);
       let data = pc.decryptData(encryptedData , iv);
       this.renderJson({status:'解密成功', data: data});
     }catch(err){
