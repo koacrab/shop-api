@@ -53,8 +53,8 @@ module.exports = class Weixin {
               });
           }
 
-          // 解决不能直接赋值的问题
-          infos = JSON.parse(JSON.stringify(infos));
+          // 解决不能直接赋值的问题 https://www.jianshu.com/p/e78fa39aa43f
+          infos = infos.toObject();
           infos.userList = res;
 
           return resolve(infos);

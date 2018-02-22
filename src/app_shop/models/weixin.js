@@ -40,7 +40,10 @@ let UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now()
   },
-  openid: String,
+  openid: {
+    type: String,
+    default: ''
+  },
   scene: String, //从哪里过来的，场景值
   nickName: String, //用户昵称
   gender: Number, //用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
@@ -68,7 +71,7 @@ let EnrollSchema = new mongoose.Schema({
     default: 1
   },
   openid: {
-    type : String,
+    type : mongoose.Schema.ObjectId, //mongoose.Schema.Types.ObjectId
     ref : 'user'    // user的Model名
   },
   scene: String, //从哪里过来的，场景值
