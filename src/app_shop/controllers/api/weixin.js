@@ -45,7 +45,7 @@ module.exports = class Weixin {
     let info = this.request.query || {};
 
     let query = {
-      openid: info.openid
+      userid: info.userid
     }
 
     let weixin = new this.services.weixin();
@@ -60,7 +60,7 @@ module.exports = class Weixin {
     let info = this.request.query || {};
 
     let query = {
-      openid: info.openid
+      userid: info.userid
     }
 
     let weixin = new this.services.weixin();
