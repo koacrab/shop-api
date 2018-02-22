@@ -112,6 +112,10 @@ module.exports = class Weixin {
   }
 
   async enrollList(info = {}, limit = 10) {
+    if (info.userid && !info.userid.match(/^[0-9a-fA-F]{24}$/)) {
+      return {code:0, msg: 'userid不合法'};
+    }
+
     // return WeixinSchema.enroll.find(info).limit(Number(limit));
     // 连表查询方法
     /*WeixinSchema.enroll.statics = {
