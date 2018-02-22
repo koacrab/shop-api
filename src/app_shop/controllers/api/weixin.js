@@ -104,7 +104,7 @@ module.exports = class Weixin {
     let weixin = new this.services.weixin();
     let result = await weixin.login(authInfo);
 
-    this.renderJson({data: authInfo});
+    this.renderJson({data: authInfo, userInfo: result});
   }
 
   // 解密

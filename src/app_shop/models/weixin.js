@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
  * 活动模型
  */
 let ActivitySchema = new mongoose.Schema({
-  openid: {
-    type: String,
-    default: ''
+  userid: {
+    type : mongoose.Schema.ObjectId, //mongoose.Schema.Types.ObjectId
+    ref : 'user'    // user的Model名
   },
   addTime: {
     type: Date,
@@ -70,7 +70,7 @@ let EnrollSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
-  user: {
+  userid: {
     type : mongoose.Schema.ObjectId, //mongoose.Schema.Types.ObjectId
     ref : 'user'    // user的Model名
   },

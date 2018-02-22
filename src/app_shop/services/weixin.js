@@ -44,7 +44,7 @@ module.exports = class Weixin {
     return new Promise(function(resolve, reject) {
       WeixinSchema.enroll.
         find({activityId: info._id}).
-        populate('user').
+        populate('userid').
         exec(function (error, res) {
           if (error) {
               return resolve({
