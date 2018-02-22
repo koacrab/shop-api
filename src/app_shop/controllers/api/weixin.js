@@ -103,8 +103,10 @@ module.exports = class Weixin {
 
     let weixin = new this.services.weixin();
     let result = await weixin.login(authInfo);
+    // 返回用户的id
+    authInfo.userid = result._id;
 
-    this.renderJson({data: authInfo, userInfo: result});
+    this.renderJson({data: authInfo});
   }
 
   // 解密
