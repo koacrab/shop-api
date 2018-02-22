@@ -68,7 +68,7 @@ module.exports = class Weixin {
   }
 
   async activityEnroll(query = {}){
-    let status = WeixinSchema.enroll.findOne(query);
+    let status = await WeixinSchema.enroll.findOne(query);
 
     if(status){
       return {
@@ -102,13 +102,20 @@ module.exports = class Weixin {
         通过对象的clazzName属性返回班级名称
     })*/
 
-    WeixinSchema.enroll.
-      findOne(info).
-      populate('activityId').
-      exec(function (err, res) {
-        if (err) return handleError(err);
-        console.log(res);
-        // prints "The author is Ian Fleming"
+    return new Promise(function(resolve, reject) {
+      WeixinSchema.enroll.
+        find(info).
+        populate('activityId').
+        exec(function (error, res) {
+          if (error) {
+              return resolve({
+                  code: '1',
+                  msg: error
+              });
+          }
+
+          return resolve(res);
+      });
     });
 
   }
