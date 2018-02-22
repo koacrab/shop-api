@@ -40,7 +40,26 @@ module.exports = class Weixin {
 
   async activityInfo(info = {}){
     let infos = await WeixinSchema.activity.findOne(info);
-    return infos;
+
+    return new Promise(function(resolve, reject) {
+      WeixinSchema.enroll.
+        find({activityId: info._id}).
+        populate('openid').
+        exec(function (error, res) {
+          if (error) {
+              return resolve({
+                  code: '1',
+                  msg: error
+              });
+          }
+
+          // 解决不能直接赋值的问题
+          infos = JSON.parse(JSON.stringify(infos));
+          infos.userList = res;
+
+          return resolve(infos);
+      });
+    });
   }
 
   async activityList(info = {}, limit = 10) {

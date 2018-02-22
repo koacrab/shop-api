@@ -67,7 +67,10 @@ let EnrollSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
-  openid: String,
+  openid: {
+    type : String,
+    ref : 'user'    // user的Model名
+  },
   scene: String, //从哪里过来的，场景值
 });
 
