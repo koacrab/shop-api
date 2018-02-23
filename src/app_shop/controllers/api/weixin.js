@@ -68,6 +68,9 @@ module.exports = class Weixin {
 
     let result = await weixin.activityAdd(fields);
 
+    // 替发布人报名
+    await this.activityEnroll({activityId: result._id, userid: fields.userid});
+
     this.renderJson(result);
   }
 
@@ -105,6 +108,7 @@ module.exports = class Weixin {
   async enrollList(){
     let info = this.request.query || {};
 
+
     let query = {
       userid: info.userid
     }
@@ -117,8 +121,8 @@ module.exports = class Weixin {
   }
 
   // 活动报名
-  async activityEnroll(){
-    let query = this.request.query || {};
+  async activityEnroll(queryInfo){
+    let query = queryInfo || this.request.query || {};
 
     let weixin = new this.services.weixin();
 
