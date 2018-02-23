@@ -9,6 +9,52 @@ module.exports = class Weixin {
     this.renderText('获取微信小程序接口首页');
   }
 
+  /**
+   * 用户登录时授权
+   * @return {[type]} [description]
+   */
+  async login(){
+    let appid = 'wx99159edbba6cbcd3';
+    let secret = '53b312284ce0a40256f6cb5028995c62';
+
+    let info = this.request.fields || {};
+    let query = this.request.query || {};
+    let authInfo = {};
+
+    if(query.openid && query.openid !== ''){
+      authInfo = info;
+      authInfo.openid = query.openid;
+    }else{
+      authInfo = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${appid}&secret=${secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
+      authInfo = JSON.parse(authInfo);
+    }
+
+    let weixin = new this.services.weixin();
+    let result = await weixin.login(authInfo);
+    // 返回用户的id
+    authInfo.userid = result._id;
+
+    this.renderJson({data: authInfo});
+  }
+
+  // 解密
+  async jiemi(){
+    const appid = 'wx99159edbba6cbcd3';
+    let info = this.request.fields || {};
+
+    let sessionKey = info.sessionKey || '';
+    let iv = info.iv || '';
+    let encryptedData = info.encryptedData || '';
+
+    try{
+      let pc = new WXBizDataCrypt(appid, sessionKey);
+      let data = pc.decryptData(encryptedData , iv);
+      this.renderJson({status:'解密成功', data: data});
+    }catch(err){
+      this.renderJson({status:'解密失败', data: null});
+    }
+  }
+
   // 发布活动
   async activityAdd(){
     let fields = this.request.fields || {};
@@ -81,49 +127,4 @@ module.exports = class Weixin {
     this.renderJson(result);
   }
 
-  /**
-   * 用户登录时授权
-   * @return {[type]} [description]
-   */
-  async login(){
-    let appid = 'wx99159edbba6cbcd3';
-    let secret = '53b312284ce0a40256f6cb5028995c62';
-
-    let info = this.request.fields || {};
-    let query = this.request.query || {};
-    let authInfo = {};
-
-    if(query.openid && query.openid !== ''){
-      authInfo = info;
-      authInfo.openid = query.openid;
-    }else{
-      authInfo = await this.httpProxy(`https://api.weixin.qq.com/sns/jscode2session?appid=${appid}&secret=${secret}&js_code=${info.js_code}&grant_type=${info.grant_type}`);
-      authInfo = JSON.parse(authInfo);
-    }
-
-    let weixin = new this.services.weixin();
-    let result = await weixin.login(authInfo);
-    // 返回用户的id
-    authInfo.userid = result._id;
-
-    this.renderJson({data: authInfo});
-  }
-
-  // 解密
-  async jiemi(){
-    const appid = 'wx99159edbba6cbcd3';
-    let info = this.request.fields || {};
-
-    let sessionKey = info.sessionKey || '';
-    let iv = info.iv || '';
-    let encryptedData = info.encryptedData || '';
-
-    try{
-      let pc = new WXBizDataCrypt(appid, sessionKey);
-      let data = pc.decryptData(encryptedData , iv);
-      this.renderJson({status:'解密成功', data: data});
-    }catch(err){
-      this.renderJson({status:'解密失败', data: null});
-    }
-  }
 }

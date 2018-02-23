@@ -8,6 +8,28 @@ module.exports = class Weixin {
     mongoose.connect(DB_URL);
   }
 
+  async login(query = {}){
+    let status = await WeixinSchema.user.findOne({openid: query.openid});
+
+    if(status){
+      let user = WeixinSchema.user;
+
+      let userInfo = user.update({openid: query.openid},{$set: query}, function(err){
+        console.log(err)
+      });
+
+      console.log(status);
+
+      return status;
+    }else{
+      let user = new WeixinSchema.user(query);
+      let userInfo = user.save();
+      console.log(userInfo);
+
+      return userInfo;
+    }
+  }
+
   async activityAdd(info = {}){
     if (info._id && !info._id.match(/^[0-9a-fA-F]{24}$/)) {
       return {code:0, msg: 'ID不合法'};
@@ -68,26 +90,6 @@ module.exports = class Weixin {
     }
 
     return WeixinSchema.activity.find(info).limit(Number(limit));
-  }
-
-  async login(query = {}){
-    let status = await WeixinSchema.user.findOne({openid: query.openid});
-
-    if(status){
-      let user = WeixinSchema.user;
-
-      let userInfo = user.update({openid: query.openid},{$set: query}, function(err){
-        console.log(err)
-      });
-
-      return userInfo;
-    }else{
-      let user = new WeixinSchema.user(query);
-      let userInfo = user.save();
-      console.log(userInfo);
-
-      return userInfo;
-    }
   }
 
   async activityEnroll(info = {}){
