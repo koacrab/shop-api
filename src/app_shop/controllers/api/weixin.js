@@ -49,9 +49,9 @@ module.exports = class Weixin {
     try{
       let pc = new WXBizDataCrypt(appid, sessionKey);
       let data = pc.decryptData(encryptedData , iv);
-      this.renderJson({status:'解密成功', data: data});
+      this.renderJson({code:0, status:'解密成功', data: data});
     }catch(err){
-      this.renderJson({status:'解密失败', data: null});
+      this.renderJson({code:1, status:'解密失败', data: null});
     }
   }
 
